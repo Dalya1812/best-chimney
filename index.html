@@ -34,6 +34,7 @@
   --todo-bg:#4A3B05; --todo-ink:#FFE38A; color-scheme:dark}
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 html,body{margin:0}
@@ -239,6 +240,36 @@ form.quote .btn{grid-column:1/-1;width:100%}
 .form-note{grid-column:1/-1;font-size:.82rem;color:var(--muted)}
 .sent{grid-column:1/-1;padding:16px;border-radius:4px;background:var(--bg);border:1px solid var(--line);font-size:.95rem}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.lead-promises{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px;color:var(--band-ink);font-size:.95rem}
+.lead-promises li{display:flex;gap:10px;align-items:center}
+.lead-promises li::before{content:"";width:16px;height:9px;border-left:2.5px solid var(--brick);border-bottom:2.5px solid var(--brick);transform:rotate(-45deg) translateY(-3px);flex:none}
+.lead-card{background:var(--surface);color:var(--ink);border-radius:6px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);min-width:0}
+.lead-form{background:transparent;padding:32px}
+.lead-head{grid-column:1/-1;display:grid;gap:4px;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.lead-head h3{font-size:1.7rem}
+.lead-head p{color:var(--muted);font-size:.9rem}
+.flabel{font-size:.85rem;font-weight:600}
+.opt{font-weight:400;color:var(--muted)}
+.field .err{color:var(--brick);font-size:.8rem;font-weight:600}
+.field input[aria-invalid="true"]{border-color:var(--brick);box-shadow:0 0 0 1px var(--brick)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px color-mix(in srgb,var(--brick) 25%,transparent)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lead-done{padding:48px 32px;display:grid;gap:12px;justify-items:start}
+.lead-done h3{font-size:2rem}
+.lead-done p{color:var(--muted)}
+.btn[disabled]{opacity:.7;cursor:progress}
+/* quick bar */
+.quickbar{background:var(--brick);color:var(--brick-ink);padding-block:26px}
+.qb-form{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr auto;gap:14px;align-items:end}
+.qb-title h2{font-size:1.6rem;line-height:1}
+.qb-title p{font-size:.88rem;opacity:.9;margin-top:4px}
+.qb-form .field label{font-size:.78rem;font-weight:600;opacity:.95}
+.qb-form input,.qb-form select{font:inherit;font-size:1rem;padding:12px 13px;border:1px solid transparent;border-radius:4px;background:var(--brick-ink);color:#18252A;width:100%;min-width:0}
+.qb-form input[aria-invalid="true"]{box-shadow:0 0 0 3px var(--band)}
+.qb-form .btn{background:var(--band);color:var(--band-ink);white-space:nowrap}
+.qb-msg{grid-column:1/-1;font-weight:600;font-size:.95rem}
+@media (max-width:1000px){.qb-form{grid-template-columns:1fr 1fr}.qb-title{grid-column:1/-1}.qb-form .btn{grid-column:1/-1}}
+@media (max-width:520px){.qb-form{grid-template-columns:1fr}}
 @media (max-width:520px){form.quote{grid-template-columns:1fr;padding:22px}}
 
 footer.site{background:var(--band);color:var(--band-muted);border-top:1px solid rgba(255,255,255,.08);font-size:.88rem}
@@ -345,7 +376,7 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 </head>
 <body>
 
-<div class="draft"><div class="wrap"><span><b>Draft.</b> Highlighted items need the owner's real details before launch.</span><span>License, hours, team info · offer prices need owner OK</span></div></div>
+<div class="draft"><div class="wrap"><span><b>Draft.</b> Highlighted items need the owner's real details before launch.</span><span>License and team info · offer prices need owner OK · connect the form to an inbox</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -384,6 +415,20 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
       <div class="smoke" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <figcaption>Finished job · stone chimney</figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="quickbar" aria-labelledby="qb-h">
+  <div class="wrap">
+    <form class="qb-form" id="quick" novalidate>
+      <div class="qb-title"><h2 id="qb-h">Free quote in 30 seconds</h2><p>We call back within one business day.</p></div>
+      <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+      <div class="field"><label for="q-service">Service</label>
+        <select id="q-service" name="service"><option>Fall special: sweep + inspection $179</option><option>Chimney cleaning</option><option>Inspection</option><option>Repair</option><option>Not sure</option></select></div>
+      <button class="btn btn-primary" type="submit">Get my quote</button>
+      <p class="qb-msg" id="quick-msg" role="alert" hidden></p>
+    </form>
   </div>
 </section>
 
@@ -589,33 +634,59 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap contact-grid">
     <div>
-      <p class="eyebrow">Get in touch</p>
+      <p class="eyebrow">Free quote</p>
       <h2 id="contact-h" style="margin-top:14px">Book a visit</h2>
-      <p class="lede" style="margin-top:16px">Fill out the form and we'll get back to you within one business day. Or call us directly.</p>
+      <p class="lede" style="margin-top:16px">Tell us what's going on and we'll call you back within one business day with a price and a time. Prefer to talk now? Call the crew.</p>
       <a class="big-phone" href="tel:+19523953235" style="text-decoration:none">(952) 395-3235</a>
       <div class="contact-meta">
         <span><b>Office</b> 11975 Portland Ave S, Suite 100<br>Burnsville, MN 55337</span>
-        <span><b>Hours</b> <span class="todo">Mon–Sat, 8am–6pm</span></span>
-        <span><b>Email</b> <span class="todo">info@yourdomain.com</span></span>
+      </div>
+      <ul class="lead-promises">
+        <li>No obligation, no pressure</li>
+        <li>Written price before any work</li>
+        <li>Fall special $179 applies automatically</li>
+      </ul>
+    </div>
+    <div class="lead-card">
+      <form class="quote lead-form" id="quote" novalidate>
+        <div class="lead-head full">
+          <h3>Request a free quote</h3>
+          <p>Takes about a minute. Fields marked * are required.</p>
+        </div>
+        <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" autocomplete="name" required><small class="err" hidden>Please enter your name.</small></div>
+        <div class="field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(952) 555-0123" required><small class="err" hidden>Please enter a 10-digit phone number.</small></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><small class="err" hidden>That email doesn't look right.</small></div>
+        <div class="field"><label for="f-city">City *</label><input id="f-city" name="city" list="city-list" autocomplete="address-level2" placeholder="e.g. Edina" required><datalist id="city-list"></datalist><small class="err" hidden>Please enter your city.</small></div>
+        <div class="field full"><span class="flabel">What do you need? *</span>
+          <div class="chips" role="radiogroup" aria-label="Service needed">
+            <input type="radio" name="service" id="s5" value="Fall special: sweep + inspection $179" checked><label for="s5">Fall special $179</label>
+            <input type="radio" name="service" id="s1" value="Chimney cleaning"><label for="s1">Cleaning</label>
+            <input type="radio" name="service" id="s2" value="Inspection"><label for="s2">Inspection</label>
+            <input type="radio" name="service" id="s3" value="Repair"><label for="s3">Repair</label>
+            <input type="radio" name="service" id="s4" value="Not sure"><label for="s4">Not sure</label>
+          </div>
+        </div>
+        <div class="field full"><span class="flabel">Best time to call</span>
+          <div class="chips" role="radiogroup" aria-label="Best time to call">
+            <input type="radio" name="time" id="t1" value="Any time" checked><label for="t1">Any time</label>
+            <input type="radio" name="time" id="t2" value="Morning"><label for="t2">Morning</label>
+            <input type="radio" name="time" id="t3" value="Afternoon"><label for="t3">Afternoon</label>
+            <input type="radio" name="time" id="t4" value="Evening"><label for="t4">Evening</label>
+          </div>
+        </div>
+        <div class="field full"><label for="f-msg">What's going on? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Smoke in the room, a smell, water near the fireplace, damaged brick…"></textarea></div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <button class="btn btn-primary" type="submit" id="lead-submit">Get my free quote</button>
+        <p class="form-note">We only use your details to contact you about your chimney.</p>
+        <div class="sent" id="sent" role="alert" hidden></div>
+      </form>
+      <div class="lead-done" id="lead-done" hidden>
+        <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--brick)"/><path d="M16 29l8 8 16-18" fill="none" stroke="var(--brick-ink)" stroke-width="4"/></svg>
+        <h3 id="done-title">Request received</h3>
+        <p id="done-text"></p>
+        <p class="form-note" id="done-note"></p>
       </div>
     </div>
-    <form class="quote" id="quote" novalidate>
-      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
-      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
-      <div class="field full"><label for="f-city">City</label><input id="f-city" name="city" list="city-list" placeholder="Start typing your city"><datalist id="city-list"></datalist></div>
-      <div class="field full"><span style="font-size:.85rem;font-weight:600">What do you need?</span>
-        <div class="chips" role="group" aria-label="Service needed">
-          <input type="radio" name="svc" id="s1" value="Cleaning" checked><label for="s1">Cleaning</label>
-          <input type="radio" name="svc" id="s2" value="Inspection"><label for="s2">Inspection</label>
-          <input type="radio" name="svc" id="s3" value="Repair"><label for="s3">Repair</label>
-          <input type="radio" name="svc" id="s4" value="Not sure"><label for="s4">Not sure</label>
-        </div>
-      </div>
-      <div class="field full"><label for="f-msg">What's going on? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-msg" name="msg" placeholder="Smoke, smell, water, damaged brick…"></textarea></div>
-      <button class="btn btn-primary" type="submit">Request a visit</button>
-      <p class="form-note">We only use your details to reply about your chimney.</p>
-      <div class="sent" id="sent" hidden></div>
-    </form>
   </div>
 </section>
 </main>
@@ -658,7 +729,7 @@ q.addEventListener('input',()=>{
     ['.sec-head',''],['.cred','stagger'],['.ticket','rv-left'],['.extras li','rv-right stagger'],
     ['.svc','stagger'],['.prob','stagger'],['.job','stagger'],['.step','stagger'],
     ['.about-photo','rv-left'],['.about-copy','rv-right'],['.city-check',''],['.cities','rv-zoom'],
-    ['.faq-list details','stagger'],['.contact-grid > div','rv-left'],['form.quote','rv-right']
+    ['.faq-list details','stagger'],['.contact-grid > div:first-child','rv-left'],['.lead-card','rv-right']
   ];
   const vh=window.innerHeight;
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{rootMargin:'0px 0px -8% 0px',threshold:.12});
@@ -674,12 +745,56 @@ q.addEventListener('input',()=>{
   setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<vh&&r.bottom>0)el.classList.add('in');}),1500);
 })();
 (()=>{const h=document.querySelector('header.top');const on=()=>h.classList.toggle('scrolled',window.scrollY>8);on();addEventListener('scroll',on,{passive:true});})();
-document.getElementById('quote').addEventListener('submit',e=>{
+// ---- Leads ----
+// To receive leads by email: create a free form at formspree.io (or web3forms.com),
+// then paste its endpoint here, e.g. "https://formspree.io/f/abcdwxyz".
+const LEAD_ENDPOINT = "";
+const digits=s=>(s||'').replace(/\D/g,'');
+async function sendLead(data){
+  if(!LEAD_ENDPOINT) return 'preview';
+  const r=await fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});
+  if(!r.ok) throw new Error('send failed');
+  return 'sent';
+}
+function mark(el,bad){el.setAttribute('aria-invalid',bad?'true':'false');const e=el.parentElement.querySelector('.err');if(e)e.hidden=!bad;return bad;}
+const form=document.getElementById('quote');
+form.addEventListener('submit',async e=>{
   e.preventDefault();
-  const f=e.target, s=document.getElementById('sent');
-  if(!f.name.value.trim()||!f.phone.value.trim()){s.hidden=false;s.textContent='Please add your name and phone number so we can call you back.';return;}
-  s.hidden=false;
-  s.textContent='Thanks, '+f.name.value.trim().split(' ')[0]+'. Preview only: this form still needs to be connected to the business email before launch.';
+  const el=form.elements, msg=document.getElementById('sent'); msg.hidden=true;
+  if(el._gotcha.value)return;
+  let bad=false;
+  bad=mark(el.name,!el.name.value.trim())||bad;
+  bad=mark(el.phone,digits(el.phone.value).length<10)||bad;
+  bad=mark(el.email,!!el.email.value.trim()&&!/^\S+@\S+\.\S+$/.test(el.email.value.trim()))||bad;
+  bad=mark(el.city,!el.city.value.trim())||bad;
+  if(bad){form.querySelector('[aria-invalid="true"]').focus();return;}
+  const data={name:el.name.value.trim(),phone:el.phone.value.trim(),email:el.email.value.trim(),city:el.city.value.trim(),
+    service:form.querySelector('input[name="service"]:checked').value,best_time:form.querySelector('input[name="time"]:checked').value,
+    message:el.message.value.trim(),source:'Website – full form'};
+  const btn=document.getElementById('lead-submit');btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const res=await sendLead(data);
+    form.hidden=true;const d=document.getElementById('lead-done');d.hidden=false;
+    document.getElementById('done-text').textContent='Thanks, '+data.name.split(' ')[0]+'. We’ll call '+data.phone+' within one business day about: '+data.service+'.';
+    document.getElementById('done-note').textContent=res==='preview'?'Preview mode: this form isn’t connected to an inbox yet, so nothing was sent.':'Need us sooner? Call (952) 395-3235.';
+  }catch(err){
+    msg.hidden=false;msg.textContent='We couldn’t send your request. Please call us at (952) 395-3235.';
+    btn.disabled=false;btn.textContent='Get my free quote';
+  }
+});
+const quick=document.getElementById('quick');
+quick.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const el=quick.elements,m=document.getElementById('quick-msg');
+  const badName=!el.name.value.trim(),badPhone=digits(el.phone.value).length<10;
+  el.name.setAttribute('aria-invalid',badName);el.phone.setAttribute('aria-invalid',badPhone);
+  if(badName||badPhone){m.hidden=false;m.textContent=badName?'Please add your name.':'Please add a 10-digit phone number.';(badName?el.name:el.phone).focus();return;}
+  const data={name:el.name.value.trim(),phone:el.phone.value.trim(),service:el.service.value,source:'Website – quick bar'};
+  try{
+    const res=await sendLead(data);
+    m.hidden=false;m.textContent='Thanks, '+data.name.split(' ')[0]+'! We’ll call '+data.phone+' within one business day.'+(res==='preview'?' (Preview mode: not connected to an inbox yet.)':'');
+    quick.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
+  }catch(err){m.hidden=false;m.textContent='We couldn’t send that. Please call (952) 395-3235.';}
 });
 </script>
 
