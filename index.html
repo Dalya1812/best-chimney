@@ -183,7 +183,10 @@ nav.main a:hover{color:var(--band-ink)}
 .areas-foot{margin-top:22px;color:var(--muted);font-size:.95rem}
 /* offer */
 .offer{padding-block:clamp(48px,6vw,72px);background:var(--surface);border-bottom:1px solid var(--line)}
-.offer-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.ticket-wide{grid-template-columns:auto 1fr;gap:20px clamp(28px,5vw,64px);align-items:center;padding:30px clamp(24px,4vw,44px);max-width:1000px;margin:0 auto}
+.tk-main,.tk-side{display:grid;gap:12px;min-width:0}
+.tk-side{border-left:2px dashed color-mix(in srgb,var(--brick-ink) 45%,transparent);padding-left:clamp(24px,4vw,48px)}
+@media (max-width:760px){.ticket-wide{grid-template-columns:1fr}.tk-side{border-left:0;padding-left:0;border-top:2px dashed color-mix(in srgb,var(--brick-ink) 45%,transparent);padding-top:18px}}
 .ticket{position:relative;background:var(--brick);color:var(--brick-ink);border-radius:6px;padding:34px 34px 30px;display:grid;gap:14px;min-width:0}
 .ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--surface);transform:translateY(-50%)}
 .ticket::before{left:-13px}.ticket::after{right:-13px}
@@ -195,17 +198,12 @@ nav.main a:hover{color:var(--band-ink)}
 .ticket p{max-width:48ch}
 .ticket .fine{font-size:.82rem;opacity:.85;border-top:1px dashed currentColor;padding-top:12px}
 .ticket .btn{background:var(--brick-ink);color:var(--brick);justify-self:start}
-.extras{display:grid;gap:0;border-top:2px solid var(--ink);margin:0;padding:0;list-style:none}
-.extras li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.extras b{font-family:var(--display);font-size:1.7rem;font-weight:800;color:var(--brick);line-height:1;grid-row:span 2;min-width:76px}
-.extras strong{font-weight:700}
-.extras span{color:var(--muted);font-size:.93rem}
 .hero-deal{display:inline-flex;gap:10px;align-items:center;margin-bottom:22px;padding:7px 14px 7px 8px;border:1px solid rgba(255,255,255,.18);border-radius:999px;text-decoration:none;font-size:.9rem;color:var(--band-ink)}
 .hero-deal span{background:var(--brick);color:var(--brick-ink);font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
 footer.site .wrap.foot-grid{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
 .foot-grid address{font-style:normal;line-height:1.7;color:var(--band-ink)}
 .foot-grid address a{text-decoration:none}
-@media (max-width:860px){.offer-grid{grid-template-columns:1fr}footer.site .wrap.foot-grid{grid-template-columns:1fr}}
+@media (max-width:860px){footer.site .wrap.foot-grid{grid-template-columns:1fr}}
 
 
 /* work gallery */
@@ -464,7 +462,6 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 .step.rv.in::after{transform:scaleX(1)}
 .step.rv .num{display:inline-block;transform:scale(.4) rotate(-12deg);opacity:0;transition:transform .7s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0s) + .2s),opacity .4s calc(var(--d,0s) + .2s)}
 .step.rv.in .num{transform:none;opacity:1}
-.extras.rv-list li b{display:inline-block}
 @media (prefers-reduced-motion:reduce){.smoke{display:none}}
 </style>
 </head>
@@ -558,20 +555,19 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 </section>
 
 <section class="offer" id="offer" aria-labelledby="offer-h">
-  <div class="wrap offer-grid">
-    <div class="ticket">
-      <p class="eyebrow">Fall Safety Special · through Dec 31</p>
-      <h2 id="offer-h">Chimney sweep + Level 1 inspection</h2>
-      <div class="price"><b>$179</b><s>Most Twin Cities sweeps charge $189–$249</s></div>
-      <p>Full sweep of the flue, smoke chamber and firebox, a Level 1 inspection of the crown, cap and masonry, and a free camera scan of the flue. Photo report included.</p>
-      <a class="btn" href="#contact">Claim the fall special</a>
-      <p class="fine">One wood-burning flue per visit. Mention the fall special when you book. Not combinable with other offers.</p>
+  <div class="wrap">
+    <div class="ticket ticket-wide">
+      <div class="tk-main">
+        <p class="eyebrow">Fall special · through Dec 31</p>
+        <h2 id="offer-h">Sweep + inspection</h2>
+        <div class="price"><b>$179</b><s>Usually $189–$249</s></div>
+      </div>
+      <div class="tk-side">
+        <p>Full chimney sweep, Level 1 inspection and a camera scan of the flue, with a photo report.</p>
+        <a class="btn" href="#contact">Claim the fall special</a>
+        <p class="fine">One flue per visit. Mention the special when you book.</p>
+      </div>
     </div>
-    <ul class="extras">
-      <li><b>FREE</b><strong>Camera scan with every cleaning</strong><span>See the inside of your flue on video, not just our word for it.</span></li>
-      <li><b>10%</b><strong>Seniors and veterans</strong><span>Off any cleaning or inspection, all year.</span></li>
-      <li><b>$100</b><strong>Off masonry repairs over $1,000</strong><span>Tuckpointing, crown repair and rebuilds booked this fall.</span></li>
-    </ul>
   </div>
 </section>
 
@@ -855,7 +851,7 @@ q.addEventListener('input',()=>{
   const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in window))return;
   const groups=[
-    ['.sec-head',''],['.cred','stagger'],['.ticket','rv-left'],['.extras li','rv-right stagger'],
+    ['.sec-head',''],['.cred','stagger'],['.ticket','rv-zoom'],
     ['.svc','stagger'],['.prob','stagger'],['.job','stagger'],['.step','stagger'],
     ['.about-photo','rv-left'],['.about-copy','rv-right'],['.city-check',''],['.key-cities li','stagger'],['.all-btn',''],
     ['.faq-list details','stagger'],['.contact-grid > div:first-child','rv-left'],['.lead-card','rv-right']
