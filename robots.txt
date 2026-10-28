@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://dalya1812.github.io/best-chimney/sitemap.xml
