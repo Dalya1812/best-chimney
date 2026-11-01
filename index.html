@@ -34,22 +34,15 @@
 <style>
 /* Layout: a working tradesman's page — mortar-grey ground, slate ink, brick-oxide used only for actions; photos carry the hero. */
 :root{
-  --bg:#EDEFEC; --surface:#F8F9F7; --line:#CDD3CF; --ink:#18252A; --muted:#55636A;
-  --steel:#6C7E85; --brick:#A33A22; --brick-ink:#FFFFFF; --band:#18252A; --band-ink:#E9EEEC; --band-muted:#A8B5B9;
-  --todo-bg:#FFF2B8; --todo-ink:#5A4300;
+  --bg:#FFFFFF; --surface:#F3F5F8; --line:#DCE2EA; --ink:#0F1F33; --muted:#4D5B6C;
+  --steel:#5B6A7C; --brick:#C8102E; --brick-ink:#FFFFFF; --band:#0F2440; --band-ink:#FFFFFF; --band-muted:#B7C3D2;
+  --todo-bg:#FFF2B8; --todo-ink:#5A4300; --hl:#FF5C66;
   --display:"Saira Condensed","Arial Narrow",Impact,sans-serif;
   --body:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --wrap:1180px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#11191C; --surface:#182327; --line:#2B3A3F; --ink:#E6ECEA; --muted:#9AA9AE;
-  --steel:#8FA2A9; --brick:#D2593B; --brick-ink:#140B08; --band:#0B1113; --band-ink:#E6ECEA; --band-muted:#8D9CA1;
-  --todo-bg:#4A3B05; --todo-ink:#FFE38A; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#11191C; --surface:#182327; --line:#2B3A3F; --ink:#E6ECEA; --muted:#9AA9AE;
-  --steel:#8FA2A9; --brick:#D2593B; --brick-ink:#140B08; --band:#0B1113; --band-ink:#E6ECEA; --band-muted:#8D9CA1;
-  --todo-bg:#4A3B05; --todo-ink:#FFE38A; color-scheme:dark}
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -128,7 +121,7 @@ nav.main a:hover{color:var(--band-ink)}
 .hero{padding-block:0;background:var(--band);color:var(--band-ink);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-block:clamp(48px,7vw,88px)}
 .hero h1{font-size:clamp(3rem,7.4vw,5.9rem);font-weight:800;text-transform:uppercase;line-height:.93}
-.hero h1 em{font-style:normal;color:#E5704A}
+.hero h1 em{font-style:normal;color:var(--hl)}
 .hero .lede{color:var(--band-muted);margin-top:22px;font-size:1.15rem}
 .hero .eyebrow{color:var(--band-muted);margin-bottom:22px;display:flex;align-items:center;gap:10px}
 .hero .eyebrow::before{content:"";width:28px;height:2px;background:var(--brick)}
@@ -232,9 +225,9 @@ nav.main a:hover{color:var(--band-ink)}
 .offer{padding-block:clamp(48px,6vw,72px);background:var(--surface);border-bottom:1px solid var(--line)}
 .ticket-wide{grid-template-columns:auto 1fr;gap:20px clamp(28px,5vw,64px);align-items:center;padding:30px clamp(24px,4vw,44px);max-width:1000px;margin:0 auto}
 .tk-main,.tk-side{display:grid;gap:12px;min-width:0}
-.tk-side{border-left:2px dashed color-mix(in srgb,var(--brick-ink) 45%,transparent);padding-left:clamp(24px,4vw,48px)}
-@media (max-width:760px){.ticket-wide{grid-template-columns:1fr}.tk-side{border-left:0;padding-left:0;border-top:2px dashed color-mix(in srgb,var(--brick-ink) 45%,transparent);padding-top:18px}}
-.ticket{position:relative;background:var(--brick);color:var(--brick-ink);border-radius:6px;padding:34px 34px 30px;display:grid;gap:14px;min-width:0}
+.tk-side{border-left:2px dashed rgba(255,255,255,.3);padding-left:clamp(24px,4vw,48px)}
+@media (max-width:760px){.ticket-wide{grid-template-columns:1fr}.tk-side{border-left:0;padding-left:0;border-top:2px dashed rgba(255,255,255,.3);padding-top:18px}}
+.ticket{position:relative;background:var(--band);color:var(--band-ink);border-radius:6px;padding:34px 34px 30px;display:grid;gap:14px;min-width:0}
 .ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:26px;height:26px;border-radius:50%;background:var(--surface);transform:translateY(-50%)}
 .ticket::before{left:-13px}.ticket::after{right:-13px}
 .ticket .eyebrow{color:inherit;opacity:.85}
@@ -244,7 +237,8 @@ nav.main a:hover{color:var(--band-ink)}
 .price s{opacity:.75;font-size:1.05rem}
 .ticket p{max-width:48ch}
 .ticket .fine{font-size:.82rem;opacity:.85;border-top:1px dashed currentColor;padding-top:12px}
-.ticket .btn{background:var(--brick-ink);color:var(--brick);justify-self:start}
+.ticket .btn{background:var(--brick);color:var(--brick-ink);justify-self:start}
+.ticket .price b{color:var(--band-ink)}
 .hero-deal{display:inline-flex;gap:10px;align-items:center;margin-bottom:22px;padding:7px 14px 7px 8px;border:1px solid rgba(255,255,255,.18);border-radius:999px;text-decoration:none;font-size:.9rem;color:var(--band-ink)}
 .hero-deal span{background:var(--brick);color:var(--brick-ink);font-weight:700;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
 footer.site .wrap.foot-grid{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
@@ -275,7 +269,7 @@ footer.site .wrap.foot-grid{display:grid;grid-template-columns:auto 1fr auto;gap
 
 /* ===== depth & scroll ===== */
 .scroll-progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:3px;z-index:40;pointer-events:none}
-.scroll-progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--brick),#E07A55);transform-origin:0 50%;transform:scaleX(var(--sp,0))}
+.scroll-progress i{display:block;height:100%;width:100%;background:var(--brick);transform-origin:0 50%;transform:scaleX(var(--sp,0))}
 
 /* hero 3D stage */
 .hero .wrap{perspective:1400px}
@@ -347,7 +341,7 @@ main section{perspective:1200px}
 .price b{font-variant-numeric:tabular-nums}
 
 /* photos: thin orange frame, slightly smaller */
-:root{--frame:#E0782F}
+:root{--frame:rgba(15,36,64,.14)}
 .hero-photo img,.job img,.about-photo img{height:auto;max-width:100%}
 .hero .wrap > div{min-width:0}
 .hero-photo,.job .imgbox,.about-photo{outline:1.5px solid var(--frame);outline-offset:-1.5px}
@@ -368,6 +362,14 @@ main section{perspective:1200px}
 /* touch devices: 3D that follows the scroll */
 .services-grid,.prob-list,.work-grid,.creds,.steps,.offer .wrap,.key-cities{perspective:900px}
 .s3d{will-change:rotate,scale}
+/* top bar */
+.topbar{background:var(--brick);color:#fff;font-size:.86rem;font-weight:600}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-block:8px}
+.topbar a{color:#fff;text-decoration:none}
+@media (max-width:760px){.topbar{display:none}}
+/* light sections get a calmer feel */
+.services-grid .svc{box-shadow:0 18px 36px -28px rgba(15,36,64,.45)}
+.svc-icon{background:#FDECEE}
 /* faq */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
 .faq-list{border-top:2px solid var(--ink)}
@@ -421,14 +423,14 @@ form.quote .btn{grid-column:1/-1;width:100%}
 .lead-done p{color:var(--muted)}
 .btn[disabled]{opacity:.7;cursor:progress}
 /* quick bar */
-.quickbar{background:var(--brick);color:var(--brick-ink);padding-block:26px}
+.quickbar{background:var(--surface);color:var(--ink);padding-block:26px;border-bottom:1px solid var(--line)}
 .qb-form{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr auto;gap:14px;align-items:end}
 .qb-title h2{font-size:1.6rem;line-height:1}
 .qb-title p{font-size:.88rem;opacity:.9;margin-top:4px}
 .qb-form .field label{font-size:.78rem;font-weight:600;opacity:.95}
-.qb-form input,.qb-form select{font:inherit;font-size:1rem;padding:12px 13px;border:1px solid transparent;border-radius:4px;background:var(--brick-ink);color:#18252A;width:100%;min-width:0}
-.qb-form input[aria-invalid="true"]{box-shadow:0 0 0 3px var(--band)}
-.qb-form .btn{background:var(--band);color:var(--band-ink);white-space:nowrap}
+.qb-form input,.qb-form select{font:inherit;font-size:1rem;padding:12px 13px;border:1px solid var(--line);border-radius:4px;background:var(--brick-ink);color:#18252A;width:100%;min-width:0}
+.qb-form input[aria-invalid="true"]{box-shadow:0 0 0 2px var(--brick)}
+.qb-form .btn{background:var(--brick);color:var(--brick-ink);white-space:nowrap}
 .qb-msg{grid-column:1/-1;font-weight:600;font-size:.95rem}
 @media (max-width:1000px){.qb-form{grid-template-columns:1fr 1fr}.qb-title{grid-column:1/-1}.qb-form .btn{grid-column:1/-1}}
 @media (max-width:520px){.qb-form{grid-template-columns:1fr}}
@@ -510,7 +512,7 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 
 /* offer ticket */
 .ticket{overflow:visible;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.ticket:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 26px 50px -24px color-mix(in srgb,var(--brick) 80%,black)}
+.ticket:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 26px 50px -24px rgba(15,36,64,.6)}
 .ticket .btn::after{content:"";position:absolute;inset:0 auto 0 0;width:40%;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--brick) 25%,transparent),transparent);animation:sheen 3.2s ease-in-out 2s infinite}
 
 /* service cards */
@@ -554,6 +556,7 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 <div class="scroll-progress" aria-hidden="true"><i id="sp-bar"></i></div>
 <div class="draft"><div class="wrap"><span><b>Draft.</b> Highlighted items need the owner's real details before launch.</span><span>License and team info · offer prices need owner OK · connect the form to an inbox</span></div></div>
 
+<div class="topbar"><div class="wrap"><span>Serving Burnsville and the Twin Cities metro</span><a href="tel:+19523953235">Call (952) 395-3235</a></div></div>
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top">
@@ -587,7 +590,7 @@ header.top.scrolled{box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
       </ul></div>
     </div>
     <div class="hero-stage">
-    <div class="hero-seal" aria-hidden="true"><svg viewBox="0 0 300 300"><defs><path id="hsTop" d="M 38 150 A 112 112 0 0 1 262 150"/><path id="hsBot" d="M 22 150 A 128 128 0 0 0 278 150"/></defs><circle cx="150" cy="150" r="148" fill="#E9EEEC"/><circle cx="150" cy="150" r="139" fill="none" stroke="#18252A" stroke-width="3"/><circle cx="150" cy="150" r="101" fill="none" stroke="#18252A" stroke-width="3"/><g class="seal-ring"><text font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="27" letter-spacing="2" fill="#18252A"><textPath href="#hsTop" startOffset="50%" text-anchor="middle" textLength="290" lengthAdjust="spacingAndGlyphs">BEST CHIMNEY SERVICES</textPath></text><text font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="3" fill="#18252A"><textPath href="#hsBot" startOffset="50%" text-anchor="middle" textLength="240" lengthAdjust="spacingAndGlyphs">BURNSVILLE · MINNESOTA</textPath></text></g><g transform="translate(81,76) scale(1.15)"><polygon points="74,14 94,14 94,74 74,54" fill="#A33A22"/><path d="M67 11L84 2L101 11Z" fill="#18252A"/><rect x="76" y="11" width="16" height="3" fill="#18252A"/><polyline points="6,94 60,40 114,94" fill="none" stroke="#18252A" stroke-width="10"/></g><text x="150" y="216" font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="13" fill="#18252A" text-anchor="middle" textLength="126" lengthAdjust="spacingAndGlyphs">CLEAN · INSPECT · REPAIR</text></svg></div>
+    <div class="hero-seal" aria-hidden="true"><svg viewBox="0 0 300 300"><defs><path id="hsTop" d="M 38 150 A 112 112 0 0 1 262 150"/><path id="hsBot" d="M 22 150 A 128 128 0 0 0 278 150"/></defs><circle cx="150" cy="150" r="148" fill="#E9EEEC"/><circle cx="150" cy="150" r="139" fill="none" stroke="#18252A" stroke-width="3"/><circle cx="150" cy="150" r="101" fill="none" stroke="#18252A" stroke-width="3"/><g class="seal-ring"><text font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="700" font-size="27" letter-spacing="2" fill="#18252A"><textPath href="#hsTop" startOffset="50%" text-anchor="middle" textLength="290" lengthAdjust="spacingAndGlyphs">BEST CHIMNEY SERVICES</textPath></text><text font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="19" letter-spacing="3" fill="#18252A"><textPath href="#hsBot" startOffset="50%" text-anchor="middle" textLength="240" lengthAdjust="spacingAndGlyphs">BURNSVILLE · MINNESOTA</textPath></text></g><g transform="translate(81,76) scale(1.15)"><polygon points="74,14 94,14 94,74 74,54" fill="#C8102E"/><path d="M67 11L84 2L101 11Z" fill="#18252A"/><rect x="76" y="11" width="16" height="3" fill="#18252A"/><polyline points="6,94 60,40 114,94" fill="none" stroke="#18252A" stroke-width="10"/></g><text x="150" y="216" font-family="'Saira Condensed','Arial Narrow',sans-serif" font-weight="600" font-size="13" fill="#18252A" text-anchor="middle" textLength="126" lengthAdjust="spacingAndGlyphs">CLEAN · INSPECT · REPAIR</text></svg></div>
     <figure class="hero-photo" style="margin:0">
       <img src="img/stone-chimney-new-cap-burnsville-mn-800.webp" srcset="img/stone-chimney-new-cap-burnsville-mn-480.webp 480w, img/stone-chimney-new-cap-burnsville-mn-800.webp 800w" sizes="(max-width:860px) 92vw, 42vw" width="1100" height="1467" alt="Tall stone-veneer chimney with a new metal cap against a blue sky" fetchpriority="high" decoding="async" data-full="img/stone-chimney-new-cap-burnsville-mn-1200.webp">
       <div class="smoke" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
