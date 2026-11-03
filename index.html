@@ -434,6 +434,65 @@ main section{perspective:1200px}
 .cta-actions{display:flex;flex-wrap:wrap;gap:12px}
 .cta-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.5)}
 .cta-band .btn-primary{background:#fff;color:#930000}
+
+/* ===== promise block ===== */
+.promise{background:var(--surface);text-align:center}
+.pr-icons{display:flex;justify-content:center;gap:clamp(10px,2vw,22px);color:var(--brick);margin-bottom:22px}
+.pr-icons svg{width:clamp(38px,6vw,64px);height:auto;animation:prPop .6s cubic-bezier(.3,1.6,.5,1) both}
+.pr-icons svg:nth-child(2){animation-delay:.08s}.pr-icons svg:nth-child(3){animation-delay:.16s}.pr-icons svg:nth-child(4){animation-delay:.24s}.pr-icons svg:nth-child(5){animation-delay:.32s}
+@keyframes prPop{from{transform:scale(.4) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+.promise h2{max-width:22ch;margin-inline:auto;font-size:clamp(1.8rem,4vw,3rem)}
+.promise hr{border:0;border-top:3px solid var(--ink);margin:clamp(26px,4vw,40px) auto;max-width:1100px}
+.pr-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;max-width:1000px;margin:0 auto;text-align:left}
+.pr-badge svg{width:clamp(150px,20vw,230px);height:auto;filter:drop-shadow(0 18px 24px rgba(147,0,0,.25));transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.pr-badge:hover svg{transform:rotate(-4deg) scale(1.04)}
+.pr-kicker{font-family:var(--display);font-weight:800;color:var(--brick);font-size:clamp(1.5rem,3vw,2.2rem);text-transform:uppercase;line-height:1.1}
+.pr-text{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:600;margin-top:14px;max-width:44ch}
+.pr-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.pr-chat{color:var(--ink);border-color:var(--line)}
+@media (max-width:700px){.pr-row{grid-template-columns:1fr;justify-items:center;text-align:center}.pr-actions{justify-content:center}.pr-text{margin-inline:auto}}
+
+/* ===== chatbot ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.cb{position:fixed;z-index:50;right:max(18px,calc(env(safe-area-inset-right,0px) + 18px));bottom:calc(18px + env(safe-area-inset-bottom,0px));display:grid;justify-items:end;gap:10px;font-family:var(--body)}
+.call-float{right:auto!important;left:max(22px,calc(env(safe-area-inset-left,0px) + 22px))}
+@media (max-width:760px){.cb{bottom:calc(92px + env(safe-area-inset-bottom,0px));right:14px}.cb-panel{height:min(520px,calc(100dvh - 200px))}.cb-fab{width:56px;height:56px}}
+.cb-fab{width:64px;height:64px;border-radius:50%;border:0;padding:0;cursor:pointer;position:relative;background:none;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);animation:cbBob 3.5s ease-in-out infinite;transition:transform .25s}
+.cb-fab:hover{transform:scale(1.08) rotate(-6deg)}
+.cb-fab svg{width:100%;height:100%;display:block}
+.cb-dot{position:absolute;top:3px;right:3px;width:14px;height:14px;border-radius:50%;background:#2FB463;border:2px solid #fff}
+@keyframes cbBob{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.cb-puff{animation:cbPuff 2.4s ease-in-out infinite}
+@keyframes cbPuff{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-3px);opacity:.6}}
+.cb-eye{animation:cbBlink 4.5s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes cbBlink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.cb-teaser{order:-2;position:relative;max-width:250px;background:#fff;color:var(--ink);padding:14px 30px 14px 16px;border-radius:14px 14px 4px 14px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45);font-size:.95rem;line-height:1.4;animation:cbIn .4s cubic-bezier(.3,1.4,.5,1)}
+.cb-tx{position:absolute;top:4px;right:6px;border:0;background:none;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;padding:4px}
+@keyframes cbIn{from{opacity:0;transform:translateY(10px) scale(.95)}to{opacity:1;transform:none}}
+.cb-panel{order:-1;padding:0!important;width:min(370px,calc(100vw - 28px));height:min(560px,calc(100dvh - 140px));background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 30px 70px -20px rgba(0,0,0,.55);display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden;animation:cbIn .3s cubic-bezier(.3,1.4,.5,1)}
+.cb-head{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--band);color:#fff}
+.cb-head svg{width:42px;height:42px;flex:none}
+.cb-head b{display:block;font-size:1rem}
+.cb-head small{display:flex;align-items:center;gap:6px;font-size:.74rem;color:#CFCFCF}
+.cb-head small i{width:8px;height:8px;border-radius:50%;background:#2FB463}
+.cb-x{margin-left:auto;border:0;background:rgba(255,255,255,.12);color:#fff;width:34px;height:34px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
+.cb-log{overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px;background:#F6F5F3;overscroll-behavior:contain}
+.cb-msg{max-width:84%;padding:10px 13px;border-radius:16px;font-size:.95rem;line-height:1.45;animation:cbIn .25s ease both;white-space:pre-line}
+.cb-msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.cb-msg.me{background:var(--brick);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.cb-msg a{color:inherit;font-weight:700}
+.cb-typing{display:inline-flex;gap:4px}.cb-typing i{width:7px;height:7px;border-radius:50%;background:#B9B4AE;animation:cbDot 1s infinite}
+.cb-typing i:nth-child(2){animation-delay:.15s}.cb-typing i:nth-child(3){animation-delay:.3s}
+@keyframes cbDot{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-4px);opacity:1}}
+.cb-quick{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px 2px;background:#fff}
+.cb-quick:empty{display:none}
+.cb-quick button{border:1px solid var(--brick);color:var(--brick);background:#fff;border-radius:999px;padding:7px 12px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.cb-quick button:hover{background:var(--brick);color:#fff}
+.cb-form{display:flex;gap:8px;padding:10px 12px 12px;background:#fff;border-top:1px solid var(--line)}
+.cb-form input{flex:1;min-width:0;font:inherit;font-size:1rem;padding:11px 14px;border:1px solid var(--line);border-radius:999px;background:#F6F5F3}
+.cb-form input:focus{outline:none;border-color:var(--ink)}
+.cb-form button{width:44px;height:44px;border-radius:50%;border:0;background:var(--brick);color:#fff;font-size:1.05rem;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.cb-fab,.cb-puff,.cb-eye{animation:none}}
 /* faq */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
 .faq-list{border-top:2px solid var(--ink)}
@@ -810,6 +869,35 @@ nav.main a:hover{background:var(--brick)}
   </div>
 </section>
 
+<section class="promise" aria-labelledby="promise-h">
+  <div class="wrap">
+    <div class="pr-icons" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" fill="currentColor"/><path d="M8 12l3 3 5-6" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
+      <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="currentColor"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4" stroke="#fff" stroke-width="1.8"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v10H3z" fill="currentColor"/><rect x="14" y="2" width="3.5" height="6" fill="currentColor"/><path d="M9.5 21v-6h5v6" fill="#fff"/></svg>
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/><path d="M12 7v5l3.5 2" fill="none" stroke="#fff" stroke-width="2"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" fill="currentColor"/></svg>
+    </div>
+    <h2 id="promise-h">Your local chimney crew in Burnsville, the Twin Cities &amp; nearby areas.</h2>
+    <hr>
+    <div class="pr-row">
+      <div class="pr-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 220"><path d="M100 6l84 28v62c0 58-38 98-84 118C54 194 16 154 16 96V34z" fill="#930000"/><path d="M100 18l72 24v54c0 50-32 85-72 103-40-18-72-53-72-103V42z" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+          <rect x="-4" y="98" width="208" height="46" fill="#B8302A"/><path d="M-4 98l-14 23 14 23zM204 98l14 23-14 23z" fill="#7A0000"/>
+          <text x="100" y="80" text-anchor="middle" font-family="'Russo One','Arial Black',sans-serif" font-size="38" fill="#fff">PRICE</text>
+          <text x="100" y="134" text-anchor="middle" font-family="'Russo One','Arial Black',sans-serif" font-size="30" fill="#fff">IN WRITING</text>
+          <text x="100" y="170" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-weight="800" font-size="15" letter-spacing="2" fill="#fff">BEFORE WE START</text>
+          <path d="M70 190l6 0 2-6 2 6 6 0-5 4 2 6-5-4-5 4 2-6zM94 186l6 0 2-6 2 6 6 0-5 4 2 6-5-4-5 4 2-6zM118 190l6 0 2-6 2 6 6 0-5 4 2 6-5-4-5 4 2-6z" fill="#fff"/></svg>
+      </div>
+      <div class="pr-copy">
+        <p class="pr-kicker">Honest. Fast. Local.</p>
+        <p class="pr-text">Licensed in Minnesota (#BC788528). You see photos of every finding and a written price before any work starts. No surprises on the bill.</p>
+        <div class="pr-actions"><a class="btn btn-primary" href="tel:+19523953235">(952) 395-3235</a><button type="button" class="btn btn-ghost pr-chat" data-open-chat>Ask us a question</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="sec-head">
@@ -972,7 +1060,7 @@ nav.main a:hover{background:var(--brick)}
         <div class="field full"><label for="f-msg">What's going on? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Smoke in the room, a smell, water near the fireplace, damaged brick…"></textarea></div>
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
         <button class="btn btn-primary" type="submit" id="lead-submit">Get my free quote</button>
-        <p class="form-note">We only use your details to contact you about your chimney.</p>
+        <p class="form-note">We only use your details to contact you about your chimney. See our <a href="privacy.html">Privacy Policy</a>.</p>
         <div class="sent" id="sent" role="alert" hidden></div>
       </form>
       <div class="lead-done" id="lead-done" hidden>
@@ -986,9 +1074,20 @@ nav.main a:hover{background:var(--brick)}
 </section>
 </main>
 
-<footer class="site"><div class="wrap foot-grid"><svg class="brand-stack" viewBox="0 0 320 230" role="img" aria-label="Best Chimney Services, Burnsville, MN"><g transform="translate(108,4) scale(1.0)"><defs><clipPath id="ckf"><polygon points="64,16 86,16 86,82 64,60"/></clipPath></defs><g clip-path="url(#ckf)"><rect x="64" y="16" width="22" height="70" fill="#D21F1F"/><path d="M64 24H86M64 32H86M64 40H86M64 48H86M64 56H86M64 64H86M64 72H86M64 80H86M75 16V24M69.5 24V32M80.5 24V32M75 32V40M69.5 40V48M80.5 40V48M75 48V56M69.5 56V64M80.5 56V64M75 64V72M69.5 72V80M80.5 72V80" stroke="#E6D3D0" stroke-width="1.3" fill="none"/></g><rect x="61" y="13" width="28" height="4" fill="#D9D6D2"/><rect x="68" y="8" width="14" height="5" fill="#FFFFFF"/><polygon points="59,9 75,1 91,9" fill="#FFFFFF"/><polyline points="20,97 52,65 84,97" fill="none" stroke="#9A9A9A" stroke-width="3"/><polyline points="4,94 52,46 100,94" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linejoin="miter"/></g><text x="160" y="150" font-family="'Russo One','Arial Black',sans-serif" font-size="40" fill="#FFFFFF" text-anchor="middle" textLength="290" lengthAdjust="spacingAndGlyphs">BEST CHIMNEY</text><path d="M15 176H82M238 176H305" stroke="#D21F1F" stroke-width="2.5"/><text x="160" y="183" font-family="'Libre Franklin',Arial,sans-serif" font-weight="700" font-size="20" fill="#D21F1F" text-anchor="middle" textLength="140" lengthAdjust="spacing">SERVICES</text><text x="160" y="214" font-family="'Libre Franklin',Arial,sans-serif" font-weight="600" font-size="15" fill="#D8D8D8" text-anchor="middle" textLength="170" lengthAdjust="spacing">BURNSVILLE, MN</text></svg><address><b>Best Chimney Services</b><br>11975 Portland Ave S, Suite 100<br>Burnsville, MN 55337<br><a href="tel:+19523953235">(952) 395-3235</a><br>MN License #BC788528</address><span>Chimney sweep · Inspection · Repair<br>© 2026 Best Chimney Services</span></div></footer>
+<footer class="site"><div class="wrap foot-grid"><svg class="brand-stack" viewBox="0 0 320 230" role="img" aria-label="Best Chimney Services, Burnsville, MN"><g transform="translate(108,4) scale(1.0)"><defs><clipPath id="ckf"><polygon points="64,16 86,16 86,82 64,60"/></clipPath></defs><g clip-path="url(#ckf)"><rect x="64" y="16" width="22" height="70" fill="#D21F1F"/><path d="M64 24H86M64 32H86M64 40H86M64 48H86M64 56H86M64 64H86M64 72H86M64 80H86M75 16V24M69.5 24V32M80.5 24V32M75 32V40M69.5 40V48M80.5 40V48M75 48V56M69.5 56V64M80.5 56V64M75 64V72M69.5 72V80M80.5 72V80" stroke="#E6D3D0" stroke-width="1.3" fill="none"/></g><rect x="61" y="13" width="28" height="4" fill="#D9D6D2"/><rect x="68" y="8" width="14" height="5" fill="#FFFFFF"/><polygon points="59,9 75,1 91,9" fill="#FFFFFF"/><polyline points="20,97 52,65 84,97" fill="none" stroke="#9A9A9A" stroke-width="3"/><polyline points="4,94 52,46 100,94" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linejoin="miter"/></g><text x="160" y="150" font-family="'Russo One','Arial Black',sans-serif" font-size="40" fill="#FFFFFF" text-anchor="middle" textLength="290" lengthAdjust="spacingAndGlyphs">BEST CHIMNEY</text><path d="M15 176H82M238 176H305" stroke="#D21F1F" stroke-width="2.5"/><text x="160" y="183" font-family="'Libre Franklin',Arial,sans-serif" font-weight="700" font-size="20" fill="#D21F1F" text-anchor="middle" textLength="140" lengthAdjust="spacing">SERVICES</text><text x="160" y="214" font-family="'Libre Franklin',Arial,sans-serif" font-weight="600" font-size="15" fill="#D8D8D8" text-anchor="middle" textLength="170" lengthAdjust="spacing">BURNSVILLE, MN</text></svg><address><b>Best Chimney Services</b><br>11975 Portland Ave S, Suite 100<br>Burnsville, MN 55337<br><a href="tel:+19523953235">(952) 395-3235</a><br>MN License #BC788528</address><span>Chimney sweep · Inspection · Repair<br>© 2026 Best Chimney Services · <a href="privacy.html">Privacy Policy</a></span></div></footer>
 
 <div class="callbar"><a class="btn btn-call" href="tel:+19523953235" aria-label="Call now: (952) 395-3235"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span>Call now</span></a><a class="btn btn-primary" href="#contact">Free quote</a></div>
+
+<div class="cb" id="cb">
+  <div class="cb-teaser" id="cb-teaser" hidden><button type="button" class="cb-tx" id="cb-tx" aria-label="Dismiss">×</button><span>Hi! I'm <b>Sooty</b>. Questions about your chimney? I can help.</span></div>
+  <button type="button" class="cb-fab" id="cb-fab" aria-controls="cb-panel" aria-expanded="false" aria-label="Chat with Best Chimney Services"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#930000"/><g class="cb-puff"><circle cx="40" cy="10" r="4" fill="#fff" opacity=".7"/><circle cx="46" cy="5" r="3" fill="#fff" opacity=".5"/></g><rect x="20" y="17" width="24" height="34" rx="5" fill="#C9472F"/><path d="M20 26h24M20 35h24M20 44h24M32 17v9M26 26v9M38 26v9M32 35v9" stroke="#7A2516" stroke-width="1.4"/><rect x="17" y="13" width="30" height="6" rx="2" fill="#2A2A2A"/><circle class="cb-eye" cx="27" cy="31" r="3.4" fill="#fff"/><circle class="cb-eye" cx="37" cy="31" r="3.4" fill="#fff"/><circle cx="27.6" cy="31.6" r="1.6" fill="#141414"/><circle cx="37.6" cy="31.6" r="1.6" fill="#141414"/><path d="M27 39q5 4 10 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="23" cy="37" r="2" fill="#FF8A80" opacity=".7"/><circle cx="41" cy="37" r="2" fill="#FF8A80" opacity=".7"/></svg><span class="cb-dot"></span></button>
+  <section class="cb-panel" id="cb-panel" role="dialog" aria-label="Chat with Best Chimney Services" hidden>
+    <header class="cb-head"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#930000"/><g class="cb-puff"><circle cx="40" cy="10" r="4" fill="#fff" opacity=".7"/><circle cx="46" cy="5" r="3" fill="#fff" opacity=".5"/></g><rect x="20" y="17" width="24" height="34" rx="5" fill="#C9472F"/><path d="M20 26h24M20 35h24M20 44h24M32 17v9M26 26v9M38 26v9M32 35v9" stroke="#7A2516" stroke-width="1.4"/><rect x="17" y="13" width="30" height="6" rx="2" fill="#2A2A2A"/><circle class="cb-eye" cx="27" cy="31" r="3.4" fill="#fff"/><circle class="cb-eye" cx="37" cy="31" r="3.4" fill="#fff"/><circle cx="27.6" cy="31.6" r="1.6" fill="#141414"/><circle cx="37.6" cy="31.6" r="1.6" fill="#141414"/><path d="M27 39q5 4 10 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="23" cy="37" r="2" fill="#FF8A80" opacity=".7"/><circle cx="41" cy="37" r="2" fill="#FF8A80" opacity=".7"/></svg><div><b>Sooty</b><small><i></i> Best Chimney helper · usually replies instantly</small></div><button type="button" class="cb-x" id="cb-x" aria-label="Close chat">×</button></header>
+    <div class="cb-log" id="cb-log" aria-live="polite"></div>
+    <div class="cb-quick" id="cb-quick"></div>
+    <form class="cb-form" id="cb-form" autocomplete="off"><label for="cb-in" class="sr">Type your message</label><input id="cb-in" placeholder="Type a message…" maxlength="400"><button type="submit" aria-label="Send">➤</button></form>
+  </section>
+</div>
 <a class="call-float" id="call-float" href="tel:+19523953235" aria-label="Call Best Chimney Services at (952) 395-3235"><span class="cf-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></span><span class="cf-text"><small>Call the crew</small>(952) 395-3235</span></a>
 
 <script>
@@ -1169,6 +1268,78 @@ quick.addEventListener('submit',async e=>{
     quick.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
   }catch(err){m.hidden=false;m.textContent='We couldn’t send that. Please call (952) 395-3235.';}
 });
+
+// ---- Sooty the chimney chatbot ----
+(()=>{
+  const $=id=>document.getElementById(id);
+  const fab=$('cb-fab'),panel=$('cb-panel'),log=$('cb-log'),quick=$('cb-quick'),form=$('cb-form'),inp=$('cb-in'),teaser=$('cb-teaser');
+  const PHONE='(952) 395-3235',TEL='tel:+19523953235';
+  const ss={get:k=>{try{return sessionStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{sessionStorage.setItem(k,v)}catch(e){}}};
+  let started=false,flow=null,lead={},transcript=[];
+  const MAIN=['Get a free quote','Prices','Do you serve my city?','Services','Talk to a person'];
+  function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+  function add(text,who){const d=document.createElement('div');d.className='cb-msg '+who;d.innerHTML=who==='me'?esc(text):text;log.appendChild(d);log.scrollTop=log.scrollHeight;transcript.push((who==='me'?'Visitor: ':'Sooty: ')+d.textContent);}
+  function chips(list){quick.innerHTML='';(list||[]).forEach(l=>{const b=document.createElement('button');b.type='button';b.textContent=l;b.onclick=()=>handle(l);quick.appendChild(b);});}
+  function say(text,list,delay){const t=document.createElement('div');t.className='cb-msg bot';t.innerHTML='<span class="cb-typing"><i></i><i></i><i></i></span>';log.appendChild(t);log.scrollTop=log.scrollHeight;chips([]);
+    setTimeout(()=>{t.remove();add(text,'bot');chips(list);},delay??Math.min(1100,400+text.length*6));}
+  function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');teaser.hidden=true;ss.set('cb-seen','1');
+    if(!started){started=true;say("Hi there! 👋 I'm Sooty from Best Chimney Services.\nI can answer quick questions or get you a free quote. What can I help with?",MAIN,500);}
+    setTimeout(()=>inp.focus(),300);}
+  function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');fab.focus();}
+  fab.onclick=()=>panel.hidden?open():close();$('cb-x').onclick=close;
+  panel.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+  document.querySelectorAll('[data-open-chat]').forEach(b=>b.onclick=open);
+  $('cb-tx').onclick=e=>{e.stopPropagation();teaser.hidden=true;ss.set('cb-seen','1');};
+  teaser.onclick=open;
+  if(!ss.get('cb-seen'))setTimeout(()=>{if(panel.hidden)teaser.hidden=false;},7000);
+
+  const A={
+    price:"Our fall special is <b>$179 for a sweep + Level 1 inspection</b> (through Dec 31). Repairs are quoted <b>in writing</b> after we inspect, so you know the price before any work starts.",
+    services:"We do it all: sweeping & cleaning, inspections (Level 1–3, camera scans), masonry & tuckpointing, leak repair & waterproofing, crowns, caps & chase covers, rebuilds, liners, and gas fireplace service.",
+    smell:"A campfire smell is usually creosote buildup, and creosote is flammable. A cleaning + inspection before your next fire is the safe move.",
+    smoke:"Smoke coming into the room usually means a blocked flue, heavy creosote or a cap problem. Please don't use the fireplace until it's checked.",
+    leak:"Water or stains near the fireplace usually point to the crown, cap or flashing. We find the source and fix it so it holds up to Minnesota winters.",
+    often:"The national standard (NFPA 211) is an inspection once a year, and a cleaning when buildup reaches about 1/8 inch.",
+    mess:"No mess. We use drop cloths, seal the fireplace opening and run a HEPA vacuum the whole time.",
+    winter:"Yes, we work all year. Cleanings and inspections any time; masonry is scheduled on days warm enough for mortar to cure.",
+    license:"Yes, we're licensed in Minnesota: <b>#BC788528</b>.",
+    levels:"Level 1 checks everything you can see and reach. Level 2 adds a camera scan inside the flue, recommended when you buy or sell a home or after a chimney fire.",
+    gas:"Yes, we service gas fireplaces: pilot lights, igniters, thermocouples, valves, gas logs and inserts.",
+    person:`Of course! Call or text the crew at <a href="${TEL}">${PHONE}</a>. Or leave your number here and we'll call you back within one business day.`
+  };
+  const R=[[/(price|cost|how much|\$|cheap|expensive|special|deal|quote price)/i,'price'],[/(service|what do you do|offer)/i,'services'],[/(smell|odor|stink)/i,'smell'],[/(smoke|smoky)/i,'smoke'],[/(leak|water|wet|stain|drip|rain)/i,'leak'],[/(how often|every year|annual)/i,'often'],[/(mess|clean up|dirty|dust)/i,'mess'],[/(winter|cold|snow|season)/i,'winter'],[/(licen|insur|certif)/i,'license'],[/(level ?[123]|camera|video)/i,'levels'],[/(gas|pilot|insert|log)/i,'gas'],[/(person|human|call|phone|talk|speak|number)/i,'person']];
+  const cities=(typeof CITIES!=='undefined'?CITIES:[]);
+  const n=s=>s.toLowerCase().replace(/saint/g,'st').replace(/[.,]/g,'').trim();
+  function cityIn(s){const v=n(s);return cities.find(c=>v.includes(n(c)));}
+
+  function startLead(){flow='name';lead={};say("Great, let's get you a free quote! 🧹\nWhat's your name?",[]);}
+  function step(text){
+    if(flow==='name'){lead.name=text.trim();flow='phone';return say(`Nice to meet you, ${esc(lead.name.split(' ')[0])}! What's the best phone number to reach you?`,[]);}
+    if(flow==='phone'){if(digits(text).length<10)return say("Hmm, that doesn't look like a full number. Could you send all 10 digits?",[]);lead.phone=text.trim();flow='city';return say("Got it. Which city is the house in?",['Burnsville','Edina','Eden Prairie','Lakeville','Other']);}
+    if(flow==='city'){lead.city=text.trim();flow='issue';const c=cityIn(text);return say((c?`${c} is in our service area. 👍\n`:'')+"Last one: what's going on with the chimney or fireplace?",['Need a cleaning','Inspection','Leak / water','Damaged brick','Gas fireplace','Not sure']);}
+    if(flow==='issue'){lead.message=text.trim();flow=null;send();return;}
+  }
+  async function send(){
+    say("Sending this to the crew…",[],500);
+    const data={name:lead.name,phone:lead.phone,city:lead.city,service:lead.message,message:lead.message,source:'Website – chatbot',transcript:transcript.join('\n')};
+    try{const res=await sendLead(data);
+      setTimeout(()=>say(`All set, ${esc(lead.name.split(' ')[0])}! ✅ The crew will call <b>${esc(lead.phone)}</b> within one business day.`+(res==='preview'?'\n<small>(Preview: not connected to an inbox yet.)</small>':'')+`\nNeed us sooner? <a href="${TEL}">${PHONE}</a>`,['Prices','Services']),900);
+    }catch(e){setTimeout(()=>say(`Sorry, that didn't go through. Please call <a href="${TEL}">${PHONE}</a> and we'll take care of you.`,MAIN),900);}
+  }
+  function handle(text){
+    text=(text||'').trim();if(!text)return;add(text,'me');inp.value='';
+    if(flow)return step(text);
+    if(/^(get a free quote|quote|book|schedule|appointment|estimate|come out)/i.test(text)||/(book|schedule|appointment|estimate|quote)/i.test(text))return startLead();
+    if(/do you serve my city\?/i.test(text))return say("Type your city and I'll check. We cover 58 cities around Burnsville and the Twin Cities.",['Burnsville','Minneapolis','St. Paul','Edina']);
+    const c=cityIn(text);if(c)return say(`Yes! We serve <b>${c}</b>. Want a free quote?`,['Get a free quote','Prices']);
+    if(/^(other|not sure)$/i.test(text))return say("No problem. Tell me a bit more, or I can get you a free quote.",['Get a free quote','Talk to a person']);
+    if(/^(hi|hey|hello|yo|good (morning|afternoon|evening))\b/i.test(text))return say("Hi! 😊 How can I help with your chimney today?",MAIN);
+    if(/(thank|thx|great|awesome|perfect)/i.test(text))return say("Anytime! Anything else I can help with?",['Get a free quote','Prices']);
+    for(const [re,k] of R)if(re.test(text))return say(A[k],k==='person'?['Get a free quote']:['Get a free quote','Talk to a person']);
+    say("Good question! The crew can answer that best. Want me to take your number so they can call you?",['Get a free quote','Talk to a person']);
+  }
+  form.addEventListener('submit',e=>{e.preventDefault();handle(inp.value);});
+})();
 </script>
 
 </body>
