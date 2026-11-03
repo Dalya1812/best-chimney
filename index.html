@@ -493,6 +493,17 @@ main section{perspective:1200px}
 .cb-form input:focus{outline:none;border-color:var(--ink)}
 .cb-form button{width:44px;height:44px;border-radius:50%;border:0;background:var(--brick);color:#fff;font-size:1.05rem;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.cb-fab,.cb-puff,.cb-eye{animation:none}}
+
+/* five stars */
+.pr-stars{display:flex;justify-content:center;gap:clamp(6px,1.4vw,14px);color:#E0A33A;margin-bottom:22px}
+.pr-stars svg{width:clamp(44px,7vw,78px);height:auto;filter:drop-shadow(0 6px 10px rgba(224,163,58,.35));animation:prPop .6s cubic-bezier(.3,1.6,.5,1) both}
+.pr-stars svg:nth-child(2){animation-delay:.08s}.pr-stars svg:nth-child(3){animation-delay:.16s}.pr-stars svg:nth-child(4){animation-delay:.24s}.pr-stars svg:nth-child(5){animation-delay:.32s}
+/* rotating city */
+.city-slot{display:inline-block;overflow:hidden;vertical-align:bottom}
+#city-rot{display:inline-block;transition:transform .28s cubic-bezier(.6,0,.2,1),opacity .28s}
+#city-rot.out{transform:translateY(-35%);opacity:0}
+#city-rot.pre{transform:translateY(35%);opacity:0;transition:none}
+.city-name{color:var(--brick)}
 /* faq */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
 .faq-list{border-top:2px solid var(--ink)}
@@ -769,7 +780,7 @@ nav.main a:hover{background:var(--brick)}
   <div class="wrap">
     <div class="hero-copy">
       <a class="hero-deal" href="#quick"><span>Fall special</span>Sweep + inspection $179 →</a>
-      <h1 id="hero-h">Chimney sweep &amp; repair in <em>Burnsville</em>, MN</h1>
+      <h1 id="hero-h">Chimney sweep &amp; repair in <em class="city-slot"><span id="city-rot">Burnsville</span></em>, MN</h1>
       <p class="lede">Sweeps, inspections, masonry and fireplace repair across the Twin Cities. Written price before any work starts.</p>
       <ul class="hero-checks">
         <li><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Photo report after every visit</li>
@@ -871,14 +882,8 @@ nav.main a:hover{background:var(--brick)}
 
 <section class="promise" aria-labelledby="promise-h">
   <div class="wrap">
-    <div class="pr-icons" aria-hidden="true">
-      <svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" fill="currentColor"/><path d="M8 12l3 3 5-6" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-      <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="currentColor"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4" stroke="#fff" stroke-width="1.8"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v10H3z" fill="currentColor"/><rect x="14" y="2" width="3.5" height="6" fill="currentColor"/><path d="M9.5 21v-6h5v6" fill="#fff"/></svg>
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/><path d="M12 7v5l3.5 2" fill="none" stroke="#fff" stroke-width="2"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" fill="currentColor"/></svg>
-    </div>
-    <h2 id="promise-h">Your local chimney crew in Burnsville, the Twin Cities &amp; nearby areas.</h2>
+    <div class="pr-stars" role="img" aria-label="Five-star service"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></div>
+    <h2 id="promise-h">Five-star chimney care for <span class="city-name">Burnsville</span>, the Twin Cities &amp; nearby areas.</h2>
     <hr>
     <div class="pr-row">
       <div class="pr-badge" aria-hidden="true">
@@ -1283,7 +1288,7 @@ quick.addEventListener('submit',async e=>{
   function say(text,list,delay){const t=document.createElement('div');t.className='cb-msg bot';t.innerHTML='<span class="cb-typing"><i></i><i></i><i></i></span>';log.appendChild(t);log.scrollTop=log.scrollHeight;chips([]);
     setTimeout(()=>{t.remove();add(text,'bot');chips(list);},delay??Math.min(1100,400+text.length*6));}
   function open(){panel.hidden=false;fab.setAttribute('aria-expanded','true');teaser.hidden=true;ss.set('cb-seen','1');
-    if(!started){started=true;say("Hi there! 👋 I'm Sooty from Best Chimney Services.\nI can answer quick questions or get you a free quote. What can I help with?",MAIN,500);}
+    if(!started){started=true;say("Hi there! 👋 I'm Sooty from Best Chimney Services."+(window.BCS_CITY?"\nWe work in <b>"+esc(window.BCS_CITY)+"</b> every week.":"")+"\nI can answer quick questions or get you a free quote. What can I help with?",MAIN,500);}
     setTimeout(()=>inp.focus(),300);}
   function close(){panel.hidden=true;fab.setAttribute('aria-expanded','false');fab.focus();}
   fab.onclick=()=>panel.hidden?open():close();$('cb-x').onclick=close;
@@ -1339,6 +1344,36 @@ quick.addEventListener('submit',async e=>{
     say("Good question! The crew can answer that best. Want me to take your number so they can call you?",['Get a free quote','Talk to a person']);
   }
   form.addEventListener('submit',e=>{e.preventDefault();handle(inp.value);});
+})();
+
+// ---- rotating city + visitor's city (approximate, from IP) ----
+(()=>{
+  const el=document.getElementById('city-rot');if(!el)return;
+  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ROT=['Burnsville','Edina','Eden Prairie','Minnetonka','Lakeville','Bloomington','Eagan','Apple Valley','Prior Lake','Plymouth','Wayzata','Minneapolis','St. Paul','Woodbury'];
+  const norm=s=>(s||'').toLowerCase().replace(/^saint /,'st ').replace(/[.]/g,'').trim();
+  const list=(typeof CITIES!=='undefined'?CITIES:ROT);
+  let i=0,timer=null,locked=false;
+  function show(name){
+    if(reduce){el.textContent=name;return;}
+    el.classList.add('out');
+    setTimeout(()=>{el.textContent=name;el.classList.remove('out');el.classList.add('pre');void el.offsetWidth;el.classList.remove('pre');},280);
+  }
+  function lock(city){
+    locked=true;clearInterval(timer);show(city);
+    document.querySelectorAll('.city-name').forEach(n=>n.textContent=city);
+    const fc=document.getElementById('f-city');if(fc&&!fc.value)fc.value=city;
+    try{sessionStorage.setItem('bcs-city',city)}catch(e){}
+    window.BCS_CITY=city;
+  }
+  if(!reduce)timer=setInterval(()=>{if(locked)return;i=(i+1)%ROT.length;show(ROT[i]);},2600);
+  let saved=null;try{saved=sessionStorage.getItem('bcs-city')}catch(e){}
+  if(saved)return lock(saved);
+  const match=c=>list.find(x=>norm(x)===norm(c));
+  const ctrl=new AbortController();setTimeout(()=>ctrl.abort(),2500);
+  fetch('https://ipapi.co/json/',{signal:ctrl.signal}).then(r=>r.json()).then(d=>{
+    if(d&&d.region_code==='MN'){const c=match(d.city);if(c)lock(c);}
+  }).catch(()=>{});
 })();
 </script>
 
