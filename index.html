@@ -1346,7 +1346,7 @@ quick.addEventListener('submit',async e=>{
   form.addEventListener('submit',e=>{e.preventDefault();handle(inp.value);});
 })();
 
-// ---- rotating city + visitor's city (approximate, from IP) ----
+// ---- visitor's city (approximate, from IP); default stays Burnsville ----
 (()=>{
   const el=document.getElementById('city-rot');if(!el)return;
   const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1366,7 +1366,6 @@ quick.addEventListener('submit',async e=>{
     try{sessionStorage.setItem('bcs-city',city)}catch(e){}
     window.BCS_CITY=city;
   }
-  if(!reduce)timer=setInterval(()=>{if(locked)return;i=(i+1)%ROT.length;show(ROT[i]);},2600);
   let saved=null;try{saved=sessionStorage.getItem('bcs-city')}catch(e){}
   if(saved)return lock(saved);
   const match=c=>list.find(x=>norm(x)===norm(c));
