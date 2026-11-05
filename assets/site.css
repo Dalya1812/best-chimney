@@ -511,6 +511,9 @@ footer.site .wrap.foot-grid{grid-template-columns:auto 1fr 1fr 1fr;align-items:s
 .pb-other a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.94rem}.pb-other a:hover{color:var(--brick)}
 @media (max-width:900px){.pb-grid{grid-template-columns:1fr}.pb-side{position:static}}
 @media (max-width:560px){.pb-list{grid-template-columns:1fr}}
+
+/* image placeholders */
+.job img{transition:opacity .4s,transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
 /* faq */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
 .faq-list{border-top:2px solid var(--ink)}
