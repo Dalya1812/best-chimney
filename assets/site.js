@@ -16,7 +16,7 @@ q.addEventListener('input',()=>{
 });
 
 (()=>{
-  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce=true; // motion effects turned off
   if(reduce||!('IntersectionObserver' in window))return;
   const groups=[
     ['.sec-head',''],['.cred','stagger'],['.ticket','rv-zoom'],
@@ -47,7 +47,7 @@ q.addEventListener('input',()=>{
 
 // ---- depth & scroll effects ----
 (()=>{
-  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce=true; // motion effects turned off
   const fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
   const root=document.documentElement,bar=document.getElementById('sp-bar');
   const stage=document.querySelector('.hero-stage'),h1=document.querySelector('.hero h1');
@@ -94,7 +94,7 @@ q.addEventListener('input',()=>{
 
 // ---- touch: scroll-linked 3D on cards ----
 (()=>{
-  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce=true; // motion effects turned off
   const fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
   if(reduce||fine)return;
   const els=[...document.querySelectorAll('.svc,.prob,.job,.cred,.ticket,.step,.lead-card')];

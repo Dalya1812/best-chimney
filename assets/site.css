@@ -514,6 +514,13 @@ footer.site .wrap.foot-grid{grid-template-columns:auto 1fr 1fr 1fr;align-items:s
 
 /* image placeholders */
 .job img{transition:opacity .4s,transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
+
+/* ===== calm mode: no entrance / scroll / decorative animations ===== */
+.hero-seal,.hero-seal svg,.cities:not([hidden]),.hero-form,.hero2 .hero-copy > *,.pr-icons svg,.pr-stars svg,.callbar .btn-call svg,.cf-icon,.cf-icon svg,
+.hero .hero-deal,.hero .eyebrow,.hero h1,.hero .lede,.hero .hero-cta,.hero .hero-facts,.hero-photo,.hero-photo img,.hero-photo figcaption,.hero-deal span,.ticket .btn::after,.seal-ring{animation:none!important}
+.smoke{display:none!important}
+.job:hover img{transform:none}
+.svc:hover .svc-icon{transform:none}
 /* faq */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
 .faq-list{border-top:2px solid var(--ink)}
