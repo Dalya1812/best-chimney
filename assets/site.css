@@ -839,3 +839,9 @@ nav.main a:hover{background:var(--brick)}
 .hero-form-workiz{gap:10px}
 .workiz-embed{margin-inline:-8px;min-height:554px}
 .workiz-embed iframe{width:100%!important;border:0;display:block}
+/* logo / seal: no spinning or wobbling */
+.seal-ring,.hero-seal svg,.pr-badge:hover svg{animation:none!important}
+.pr-badge:hover svg{transform:none}
+/* chat mascot: keep still (no bob, puff, blink or hover tilt) */
+.cb-fab,.cb-puff,.cb-eye{animation:none!important}
+.cb-fab:hover{transform:none!important}
