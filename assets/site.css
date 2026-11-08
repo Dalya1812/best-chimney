@@ -773,3 +773,37 @@ nav.main a:hover{background:var(--brick)}
   .qb-form{padding:20px}
   .hero .wrap h1{font-size:clamp(2.1rem,9vw,2.6rem);line-height:1.14}
 }
+
+/* ---- Google reviews strip (placeholder until connected) ---- */
+.reviews{background:var(--bg);border-bottom:1px solid var(--line);padding-block:clamp(36px,5vw,56px) clamp(40px,5vw,60px)}
+.rv-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-bottom:22px}
+.rv-score{display:flex;align-items:center;gap:14px}
+.rv-score .g-logo{width:40px;height:40px;flex:none}
+.rv-score h2{font-size:clamp(1.4rem,2.4vw,1.8rem)}
+.rv-score p{margin:4px 0 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+.rv-stars{display:inline-flex;gap:2px;color:#FBBC05}
+.rv-stars svg{width:18px;height:18px}
+.rv-track{--rv-pad:max(20px,calc((100vw - var(--wrap))/2 + 20px));display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--rv-pad) 12px;scroll-padding-inline:var(--rv-pad);scrollbar-width:thin}
+.rv-track:focus-visible{outline-offset:-3px}
+.rv-card{flex:0 0 min(320px,82vw);scroll-snap-align:start;margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px 20px;display:grid;gap:10px;align-content:start}
+.rv-top{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center}
+.rv-top small{display:block;color:var(--steel);font-size:.8rem}
+.rv-top .g-logo{width:20px;height:20px}
+.rv-av{width:40px;height:40px;border-radius:50%;background:var(--brick);color:#fff;display:grid;place-items:center;font-weight:700}
+.rv-card blockquote{margin:0;font-size:.97rem;line-height:1.5}
+/* ---- Who we are ---- */
+.about{padding-block:clamp(64px,8vw,104px)}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.about-copy h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0 18px}
+.about-people{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.about-people li{display:grid;gap:4px;justify-items:start}
+.about-people small{color:var(--steel);font-size:.85rem}
+.ab-ph{background:repeating-linear-gradient(135deg,var(--surface) 0 12px,#ECECEC 12px 24px);border:1px dashed #BDBDBD;border-radius:8px;display:grid;place-items:center;text-align:center;font-size:.85rem;padding:8px}
+.ab-face{width:72px;height:72px;border-radius:50%;padding:0;margin-bottom:6px}
+.ab-video{aspect-ratio:16/9;position:relative;gap:10px;align-content:center}
+.ab-play{width:64px;height:64px;border-radius:50%;background:var(--brick);position:relative}
+.ab-play::after{content:"";position:absolute;left:26px;top:20px;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+.about-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.about-photos .ab-ph{aspect-ratio:4/3}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.about-people{grid-template-columns:1fr 1fr}}

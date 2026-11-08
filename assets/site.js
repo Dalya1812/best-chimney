@@ -155,7 +155,7 @@ form.addEventListener('submit',async e=>{
   try{
     const res=await sendLead(data);
     form.hidden=true;const d=document.getElementById('lead-done');d.hidden=false;
-    document.getElementById('done-text').textContent='Thanks, '+data.name.split(' ')[0]+'. We’ll call '+data.phone+' within one business day about: '+data.service+'.';
+    document.getElementById('done-text').textContent='Thanks, '+data.name.split(' ')[0]+'. We’ll call '+data.phone+' shortly about: '+data.service+'.';
     document.getElementById('done-note').textContent=res==='preview'?'Preview mode: this form isn’t connected to an inbox yet, so nothing was sent.':'Need us sooner? Call (952) 395-3235.';
   }catch(err){
     msg.hidden=false;msg.textContent='We couldn’t send your request. Please call us at (952) 395-3235.';
@@ -172,7 +172,7 @@ quick.addEventListener('submit',async e=>{
   const data={name:el.name.value.trim(),phone:el.phone.value.trim(),service:el.service.value,source:'Website – quick bar'};
   try{
     const res=await sendLead(data);
-    m.hidden=false;m.textContent='Thanks, '+data.name.split(' ')[0]+'! We’ll call '+data.phone+' within one business day.'+(res==='preview'?' (Preview mode: not connected to an inbox yet.)':'');
+    m.hidden=false;m.textContent='Thanks, '+data.name.split(' ')[0]+'! We’ll call '+data.phone+' shortly.'+(res==='preview'?' (Preview mode: not connected to an inbox yet.)':'');
     quick.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
   }catch(err){m.hidden=false;m.textContent='We couldn’t send that. Please call (952) 395-3235.';}
 });
@@ -213,7 +213,7 @@ quick.addEventListener('submit',async e=>{
     license:"Yes, we're licensed in Minnesota: <b>#BC788528</b>.",
     levels:"Level 1 checks everything you can see and reach. Level 2 adds a camera scan inside the flue, recommended when you buy or sell a home or after a chimney fire.",
     gas:"Yes, we service gas fireplaces: pilot lights, igniters, thermocouples, valves, gas logs and inserts.",
-    person:`Of course! Call or text the crew at <a href="${TEL}">${PHONE}</a>. Or leave your number here and we'll call you back within one business day.`
+    person:`Of course! Call or text the crew at <a href="${TEL}">${PHONE}</a>. Or leave your number here and we'll call you back shortly.`
   };
   const R=[[/(price|cost|how much|\$|cheap|expensive|special|deal|quote price)/i,'price'],[/(service|what do you do|offer)/i,'services'],[/(smell|odor|stink)/i,'smell'],[/(smoke|smoky)/i,'smoke'],[/(leak|water|wet|stain|drip|rain)/i,'leak'],[/(how often|every year|annual)/i,'often'],[/(mess|clean up|dirty|dust)/i,'mess'],[/(winter|cold|snow|season)/i,'winter'],[/(licen|insur|certif)/i,'license'],[/(level ?[123]|camera|video)/i,'levels'],[/(gas|pilot|insert|log)/i,'gas'],[/(person|human|call|phone|talk|speak|number)/i,'person']];
   const cities=(typeof CITIES!=='undefined'?CITIES:[]);
@@ -231,7 +231,7 @@ quick.addEventListener('submit',async e=>{
     say("Sending this to the crew…",[],500);
     const data={name:lead.name,phone:lead.phone,city:lead.city,service:lead.message,message:lead.message,source:'Website – chatbot',transcript:transcript.join('\n')};
     try{const res=await sendLead(data);
-      setTimeout(()=>say(`All set, ${esc(lead.name.split(' ')[0])}! ✅ The crew will call <b>${esc(lead.phone)}</b> within one business day.`+(res==='preview'?'\n<small>(Preview: not connected to an inbox yet.)</small>':'')+`\nNeed us sooner? <a href="${TEL}">${PHONE}</a>`,['Prices','Services']),900);
+      setTimeout(()=>say(`All set, ${esc(lead.name.split(' ')[0])}! ✅ The crew will call <b>${esc(lead.phone)}</b> shortly.`+(res==='preview'?'\n<small>(Preview: not connected to an inbox yet.)</small>':'')+`\nNeed us sooner? <a href="${TEL}">${PHONE}</a>`,['Prices','Services']),900);
     }catch(e){setTimeout(()=>say(`Sorry, that didn't go through. Please call <a href="${TEL}">${PHONE}</a> and we'll take care of you.`,MAIN),900);}
   }
   function handle(text){

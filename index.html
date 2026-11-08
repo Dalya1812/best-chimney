@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=0d9f7d60">
+<link rel="stylesheet" href="assets/site.css?v=r20261108">
 </head>
 <body>
 
@@ -66,7 +66,7 @@
     </div>
     <form class="hero-form" id="quick" novalidate aria-labelledby="qb-h">
       <h2 id="qb-h">Get a free quote</h2>
-      <p class="hf-sub">Takes 30 seconds. We call you back within one business day.</p>
+      <p class="hf-sub">Takes 30 seconds. We call you back shortly.</p>
       <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
       <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(952) 555-0123" required></div>
       <div class="field"><label for="q-service">What do you need?</label>
@@ -75,6 +75,49 @@
       <p class="qb-msg" id="quick-msg" role="alert" hidden></p>
       <p class="hf-note">No obligation. We never share your number.</p>
     </form>
+  </div>
+</section>
+
+<!-- REVIEWS: placeholder cards until Google Reviews is connected (Elfsight/Trustindex widget or Places API).
+     To fill by hand: copy each real review from the Google Business Profile into one .rv-card (name, initial, text). -->
+<section class="reviews" id="reviews" aria-labelledby="rv-h">
+  <div class="wrap">
+    <div class="rv-head">
+      <div class="rv-score"><div><h2 id="rv-h">Google reviews</h2><p><b class="todo">5.0</b> <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span> <span class="todo">from 00 reviews</span></p></div></div>
+      <a class="btn btn-ghost rv-all" href="#" target="_blank" rel="noopener"><span class="todo">See all reviews on Google</span> <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="rv-track" tabindex="0" aria-label="Customer reviews, scroll sideways">
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
+        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+      </figure>
   </div>
 </section>
 
@@ -174,6 +217,26 @@
         <p class="pr-text">Licensed in Minnesota (#BC788528). You see photos of every finding and a written price before any work starts. No surprises on the bill.</p>
         <div class="pr-actions"><a class="btn btn-primary" href="tel:+19523953235">(952) 395-3235</a><button type="button" class="btn btn-ghost pr-chat" data-open-chat>Ask us a question</button></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE: placeholders until the client sends the video/photos and copy. -->
+<section class="about" id="about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <p class="eyebrow">Who we are</p>
+      <h2 id="about-h">Meet the crew behind Best Chimney</h2>
+      <p class="lede"><span class="todo">Short story of the company: who founded it, how long you've been in Burnsville, what you care about on every job. 2–3 sentences.</span></p>
+      <ul class="about-people">
+        <li><span class="ab-ph ab-face"></span><b><span class="todo">Name</span></b><small><span class="todo">Owner / role</span></small></li>
+        <li><span class="ab-ph ab-face"></span><b><span class="todo">Name</span></b><small><span class="todo">Lead technician</span></small></li>
+        <li><span class="ab-ph ab-face"></span><b><span class="todo">Name</span></b><small><span class="todo">Role</span></small></li>
+      </ul>
+    </div>
+    <div class="about-media">
+      <div class="ab-ph ab-video"><span class="ab-play" aria-hidden="true"></span><span class="todo">Team video goes here</span></div>
+      <div class="about-photos"><div class="ab-ph "><span class="todo">Team photo</span></div><div class="ab-ph "><span class="todo">On the job</span></div><div class="ab-ph "><span class="todo">Truck / crew</span></div></div>
     </div>
   </div>
 </section>
@@ -305,7 +368,7 @@
     <div>
       <p class="eyebrow">Free quote</p>
       <h2 id="contact-h" style="margin-top:14px">Book a visit</h2>
-      <p class="lede" style="margin-top:16px">Tell us what's going on and we'll call you back within one business day with a price and a time. Prefer to talk now? Call the crew.</p>
+      <p class="lede" style="margin-top:16px">Tell us what's going on and we'll call you back shortly with a price and a time. Prefer to talk now? Call the crew.</p>
       <a class="big-phone" href="tel:+19523953235" style="text-decoration:none">(952) 395-3235</a>
       <div class="contact-meta">
         <span><b>Office</b> 11975 Portland Ave S, Suite 100<br>Burnsville, MN 55337</span>
@@ -378,7 +441,7 @@
 </div>
 <a class="call-float" id="call-float" href="tel:+19523953235" aria-label="Call Best Chimney Services at (952) 395-3235"><span class="cf-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></span><span class="cf-text"><small>Call the crew</small>(952) 395-3235</span></a>
 
-<script src="assets/site.js?v=0d9f7d60" defer></script>
+<script src="assets/site.js?v=r20261108" defer></script>
 
 </body>
 </html>
