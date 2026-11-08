@@ -835,3 +835,7 @@ nav.main a:hover{background:var(--brick)}
 .ty-steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--brick);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:6px}
 .ty-steps span{color:var(--muted)}
 @media (max-width:700px){.ty-steps{grid-template-columns:1fr}}
+/* Workiz embed inside the hero card */
+.hero-form-workiz{gap:10px}
+.workiz-embed{margin-inline:-8px;min-height:554px}
+.workiz-embed iframe{width:100%!important;border:0;display:block}
