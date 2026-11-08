@@ -2,7 +2,7 @@
 const CITIES=["Edina","Minnetonka","Eden Prairie","Plymouth","Bloomington","Lakeville","Burnsville","Prior Lake","Wayzata","Chanhassen","St. Louis Park","Eagan","Shakopee","Savage","Maple Grove","Apple Valley","Rosemount","Chaska","Victoria","Excelsior","Shorewood","Orono","Medina","Golden Valley","Hopkins","Richfield","Mendota Heights","Inver Grove Heights","Farmington","Minneapolis","St. Paul","Woodbury","North Oaks","White Bear Lake","Stillwater","Shoreview","Deephaven","Greenwood","Minnetonka Beach","Tonka Bay","Woodland","Mound","Minnetrista","Spring Park","Long Lake","Sunfish Lake","West St. Paul","Roseville","Arden Hills","Vadnais Heights","Mahtomedi","Lake Elmo","Cottage Grove","Oakdale","Maplewood","New Brighton","Carver","Hastings"];
 const sorted=[...CITIES].sort((a,b)=>a.localeCompare(b));
 const ul=document.getElementById('cities'), dl=document.getElementById('city-list');
-sorted.forEach(c=>{const o=document.createElement('option');o.value=c;dl.appendChild(o);});
+if(dl)sorted.forEach(c=>{const o=document.createElement('option');o.value=c;dl.appendChild(o);});
 const norm=s=>s.toLowerCase().replace(/saint/g,'st').replace(/\./g,'').trim();
 const q=document.getElementById('city-q'), out=document.getElementById('city-out');
 q.addEventListener('input',()=>{
