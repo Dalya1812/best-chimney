@@ -277,6 +277,3 @@ quick.addEventListener('submit',async e=>{
     if(d&&d.region_code==='MN'){const c=match(d.city);if(c)lock(c);}
   }).catch(()=>{});
 })();
-
-/* before/after slider */
-document.querySelectorAll('.ba-compare').forEach(function(c){var r=c.querySelector('input');if(!r)return;var u=function(){c.style.setProperty('--pos',r.value+'%')};r.addEventListener('input',u);u();});

@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=r20261108b">
+<link rel="stylesheet" href="assets/site.css?v=r20261108c">
 </head>
 <body>
 
@@ -78,45 +78,44 @@
   </div>
 </section>
 
-<!-- REVIEWS: placeholder cards until Google Reviews is connected (Elfsight/Trustindex widget or Places API).
-     To fill by hand: copy each real review from the Google Business Profile into one .rv-card (name, initial, text). -->
+<!-- REVIEWS: SAMPLE text for layout only. Replace with real Google reviews (or a reviews widget) before going live. -->
 <section class="reviews" id="reviews" aria-labelledby="rv-h">
   <div class="wrap">
     <div class="rv-head">
-      <div class="rv-score"><div><h2 id="rv-h">Google reviews</h2><p><b class="todo">5.0</b> <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span> <span class="todo">from 00 reviews</span></p></div></div>
-      <a class="btn btn-ghost rv-all" href="#" target="_blank" rel="noopener"><span class="todo">See all reviews on Google</span> <span aria-hidden="true">→</span></a>
+      <div class="rv-score"><span class="g-badge" aria-hidden="true">G</span><div><h2 id="rv-h">What customers say</h2><p><span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span> <span>Reviews from Google</span></p></div></div>
+      <a class="rv-all" href="#" target="_blank" rel="noopener">See all on Google <span aria-hidden="true">→</span></a>
     </div>
   </div>
   <div class="rv-track" tabindex="0" aria-label="Customer reviews, scroll sideways">
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Sweep &amp; inspection</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>Showed up on time, walked me through every photo and kept the living room spotless. Easy to book.</blockquote>
       </figure>
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Crown repair</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>Clear written price before they started. The new crown looks great and no more water in the attic.</blockquote>
       </figure>
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Liner install</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>They explained why our old flue wasn't safe and installed a new liner in one day. Friendly crew.</blockquote>
       </figure>
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Leak repair</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>Fast response after we noticed water by the fireplace. Fixed it right and sent photos of the work.</blockquote>
       </figure>
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Masonry</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>Tuckpointing came out clean and matched our old brick. Would hire again.</blockquote>
       </figure>
       <figure class="rv-card">
-        <div class="rv-top"><span class="rv-av" aria-hidden="true">A</span><div><b class="rv-name"><span class="todo">Customer name</span></b><small>Review on Google</small></div></div>
+        <div class="rv-top"><span class="rv-av" aria-hidden="true"><span class="g-badge" aria-hidden="true">G</span></span><div><b class="rv-name">Google customer</b><small>Gas fireplace</small></div><span class="rv-sample">Sample</span></div>
         <span class="rv-stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.2l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17l-6 3.3 1.3-6.6L2.4 9.1l6.7-.8z" fill="currentColor"/></svg></span>
-        <blockquote><span class="todo">Paste a real Google review here.</span></blockquote>
+        <blockquote>Our fireplace hadn't worked in two winters. One visit and it's running great.</blockquote>
       </figure>
   </div>
 </section>
@@ -126,22 +125,12 @@
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Before &amp; after</p>
-      <h2 id="ba-h">New concrete crown &amp; stainless steel liner</h2>
-      <p class="lede">We removed the old cracked crown and recast it with a proper slope for water drainage, to prevent future leaks and cracking. A new stainless steel liner went inside the existing clay flue to improve draft and keep the chimney safe to use. Drag the slider to compare.</p>
+      <h2 id="ba-h">New crown &amp; stainless steel liner</h2>
+      <p class="lede">Old cracked crown removed and recast with a proper slope for drainage. New stainless steel liner installed inside the clay flue. Ready for use.</p>
     </div>
-    <div class="ba-grid">
-      <div class="ba-compare" style="--pos:50%">
-        <img src="img/ba-crown-after-600.webp" srcset="img/ba-crown-after-600.webp 600w, img/ba-crown-after-1000.webp 1000w" sizes="(max-width:760px) 90vw, 560px" alt="After: new smooth concrete crown around the flue liner" loading="lazy" decoding="async" width="1200" height="1600">
-        <div class="ba-before"><img src="img/ba-crown-before-600.webp" srcset="img/ba-crown-before-600.webp 600w, img/ba-crown-before-1000.webp 1000w" sizes="(max-width:760px) 90vw, 560px" alt="Before: old chimney crown with a crack running through it" loading="lazy" decoding="async" width="1200" height="1600"></div>
-        <span class="ba-tag ba-tag-b">Before</span><span class="ba-tag ba-tag-a">After</span>
-        <span class="ba-handle" aria-hidden="true"></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-      </div>
-      <ol class="ba-steps">
-        <li><img src="img/ba-crown-side-before-600.webp" srcset="img/ba-crown-side-before-600.webp 600w, img/ba-crown-side-before-1000.webp 1000w" sizes="(max-width:760px) 30vw, 200px" alt="Loose, broken bricks under the old crown" loading="lazy" decoding="async" width="1200" height="1600"><b>1. Found</b><span>Split crown, loose brick, open mortar joints</span></li>
-        <li><img src="img/ba-crown-teardown-600.webp" srcset="img/ba-crown-teardown-600.webp 600w, img/ba-crown-teardown-1000.webp 1000w" sizes="(max-width:760px) 30vw, 200px" alt="Crew tearing the damaged crown and top bricks down" loading="lazy" decoding="async" width="1200" height="1600"><b>2. Removed</b><span>Old crown taken off down to solid masonry</span></li>
-        <li><img src="img/ba-crown-after-600.webp" srcset="img/ba-crown-after-600.webp 600w, img/ba-crown-after-1000.webp 1000w" sizes="(max-width:760px) 30vw, 200px" alt="Finished new concrete crown" loading="lazy" decoding="async" width="1200" height="1600"><b>3. Recast &amp; relined</b><span>New sloped crown poured, stainless steel liner installed. Clean job, ready for use.</span></li>
-      </ol>
+    <div class="ba-pair">
+      <figure><img src="img/ba-crown-before-600.webp" srcset="img/ba-crown-before-600.webp 600w, img/ba-crown-before-1000.webp 1000w" sizes="(max-width:700px) 90vw, 540px" alt="Before: old chimney crown cracked through" loading="lazy" decoding="async" width="1200" height="1600"><figcaption>Before</figcaption></figure>
+      <figure><img src="img/ba-crown-after-600.webp" srcset="img/ba-crown-after-600.webp 600w, img/ba-crown-after-1000.webp 1000w" sizes="(max-width:700px) 90vw, 540px" alt="After: new sloped concrete crown" loading="lazy" decoding="async" width="1200" height="1600"><figcaption class="after">After</figcaption></figure>
     </div>
   </div>
 </section>
@@ -466,7 +455,7 @@
 </div>
 <a class="call-float" id="call-float" href="tel:+19523953235" aria-label="Call Best Chimney Services at (952) 395-3235"><span class="cf-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></span><span class="cf-text"><small>Call the crew</small>(952) 395-3235</span></a>
 
-<script src="assets/site.js?v=r20261108b" defer></script>
+<script src="assets/site.js?v=r20261108c" defer></script>
 
 </body>
 </html>
