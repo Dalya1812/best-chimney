@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=r20261108f">
+<link rel="stylesheet" href="../assets/site.css?v=r20261108g">
 </head>
 <body>
 
@@ -66,17 +66,12 @@
       </ul>
       <a class="hero-phone" href="tel:+19523953235"><small>Prefer to talk?</small>(952) 395-3235</a>
     </div>
-    <form class="hero-form" id="quick" novalidate aria-labelledby="qb-h">
+    <div class="hero-form hero-form-workiz" id="quick" aria-labelledby="qb-h">
       <h2 id="qb-h">Get a free quote</h2>
       <p class="hf-sub">Takes 30 seconds. We call you back shortly.</p>
-      <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
-      <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(952) 555-0123" required></div>
-      <div class="field"><label for="q-service">What do you need?</label>
-        <select id="q-service" name="service"><option>Fall special: sweep + inspection $179</option><option selected>Chimney cleaning</option><option>Inspection</option><option>Masonry &amp; tuckpointing</option><option>Leak repair</option><option>Crown, cap or chase cover</option><option>Chimney rebuild</option><option>Liner or flue</option><option>Fireplace / gas fireplace</option><option>Not sure</option></select></div>
-      <button class="btn btn-primary" type="submit">Get my free quote</button>
-      <p class="qb-msg" id="quick-msg" role="alert" hidden></p>
+      <div class="workiz-embed"><script src="https://app.workiz.com/_assets/js/saj_webform_embed.js" data-src="https://st.sendajob.com/MY/servicerequest/152ef7fe0afc316d4b2ce240cee7ff74b1b3ef93_f.html" data-height="554"></script></div>
       <p class="hf-note">No obligation. We never share your number.</p>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -340,44 +335,13 @@
       </ul>
     </div>
     <div class="lead-card">
-      <form class="quote lead-form" id="quote" novalidate>
+      <div class="quote lead-form lead-form-workiz" id="quote">
         <div class="lead-head full">
           <h3>Request a free quote</h3>
-          <p>Takes about a minute. Fields marked * are required.</p>
+          <p>Takes about a minute. We call you back shortly.</p>
         </div>
-        <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" autocomplete="name" required><small class="err" hidden>Please enter your name.</small></div>
-        <div class="field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(952) 555-0123" required><small class="err" hidden>Please enter a 10-digit phone number.</small></div>
-        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><small class="err" hidden>That email doesn't look right.</small></div>
-        <div class="field"><label for="f-city">City *</label><input id="f-city" name="city" list="city-list" autocomplete="address-level2" placeholder="e.g. Edina" required><datalist id="city-list"></datalist><small class="err" hidden>Please enter your city.</small></div>
-        <div class="field full"><span class="flabel">What do you need? *</span>
-          <div class="chips" role="radiogroup" aria-label="Service needed">
-            <input type="radio" name="service" id="s5" value="Fall special: sweep + inspection $179" checked><label for="s5">Fall special $179</label>
-            <input type="radio" name="service" id="s1" value="Chimney cleaning"><label for="s1">Cleaning</label>
-            <input type="radio" name="service" id="s2" value="Inspection"><label for="s2">Inspection</label>
-            <input type="radio" name="service" id="s3" value="Repair"><label for="s3">Repair</label>
-            <input type="radio" name="service" id="s6" value="Fireplace / gas fireplace"><label for="s6">Fireplace</label>
-            <input type="radio" name="service" id="s4" value="Not sure"><label for="s4">Not sure</label>
-          </div>
-        </div>
-        <div class="field full"><span class="flabel">Best time to call</span>
-          <div class="chips" role="radiogroup" aria-label="Best time to call">
-            <input type="radio" name="time" id="t1" value="Any time" checked><label for="t1">Any time</label>
-            <input type="radio" name="time" id="t2" value="Morning"><label for="t2">Morning</label>
-            <input type="radio" name="time" id="t3" value="Afternoon"><label for="t3">Afternoon</label>
-            <input type="radio" name="time" id="t4" value="Evening"><label for="t4">Evening</label>
-          </div>
-        </div>
-        <div class="field full"><label for="f-msg">What's going on? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" placeholder="Smoke in the room, a smell, water near the fireplace, damaged brick…"></textarea></div>
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-        <button class="btn btn-primary" type="submit" id="lead-submit">Get my free quote</button>
-        <p class="form-note">We only use your details to contact you about your chimney. See our <a href="../privacy.html">Privacy Policy</a>.</p>
-        <div class="sent" id="sent" role="alert" hidden></div>
-      </form>
-      <div class="lead-done" id="lead-done" hidden>
-        <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="var(--brick)"/><path d="M16 29l8 8 16-18" fill="none" stroke="var(--brick-ink)" stroke-width="4"/></svg>
-        <h3 id="done-title">Request received</h3>
-        <p id="done-text"></p>
-        <p class="form-note" id="done-note"></p>
+        <div class="workiz-embed full"><script src="https://app.workiz.com/_assets/js/saj_webform_embed.js" data-src="https://st.sendajob.com/MY/servicerequest/152ef7fe0afc316d4b2ce240cee7ff74b1b3ef93_f.html" data-height="554"></script></div>
+        <p class="form-note full">We only use your details to contact you about your chimney. See our <a href="../privacy.html">Privacy Policy</a>.</p>
       </div>
     </div>
   </div>
@@ -400,7 +364,7 @@
 </div>
 <a class="call-float" id="call-float" href="tel:+19523953235" aria-label="Call Best Chimney Services at (952) 395-3235"><span class="cf-icon"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg></span><span class="cf-text"><small>Call the crew</small>(952) 395-3235</span></a>
 
-<script src="../assets/site.js?v=r20261108f" defer></script>
+<script src="../assets/site.js?v=r20261108g" defer></script>
 
 </body>
 </html>
