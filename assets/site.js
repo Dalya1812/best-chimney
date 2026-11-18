@@ -137,7 +137,7 @@ async function sendLead(data){
   const send=fetch(LEAD_ENDPOINT,{method:'POST',keepalive:true,headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(Object.assign({_subject:'New website lead: '+(data.name||'')+' '+(data.phone||''),_template:'table',_captcha:'false'},data))})
     .then(async r=>{if(!r.ok) throw new Error('send failed');const j=await r.json().catch(()=>({}));if(j.success===false||j.success==='false') throw new Error(j.message||'send failed');return 'sent';});
   send.catch(()=>{});
-  return Promise.race([send,new Promise(res=>setTimeout(()=>res('sent'),3500))]);
+  return Promise.race([send,new Promise(res=>setTimeout(()=>res('sent'),1200))]);
 }
 function mark(el,bad){el.setAttribute('aria-invalid',bad?'true':'false');const e=el.parentElement.querySelector('.err');if(e)e.hidden=!bad;return bad;}
 const form=document.getElementById('quote');
@@ -157,6 +157,7 @@ form.addEventListener('submit',async e=>{
   const btn=document.getElementById('lead-submit');btn.disabled=true;btn.textContent='Sending…';
   try{
     const res=await sendLead(data);
+    if(res==='sent'){location.href='/thank-you/';return;}
     form.hidden=true;const d=document.getElementById('lead-done');d.hidden=false;
     document.getElementById('done-text').textContent='Thanks, '+data.name.split(' ')[0]+'. We’ll call '+data.phone+' shortly about: '+data.service+'.';
     document.getElementById('done-note').textContent=res==='preview'?'Preview mode: this form isn’t connected to an inbox yet, so nothing was sent.':'Need us sooner? Call (952) 395-3235.';
@@ -173,11 +174,13 @@ quick.addEventListener('submit',async e=>{
   el.name.setAttribute('aria-invalid',badName);el.phone.setAttribute('aria-invalid',badPhone);
   if(badName||badPhone){m.hidden=false;m.textContent=badName?'Please add your name.':'Please add a 10-digit phone number.';(badName?el.name:el.phone).focus();return;}
   const data={name:el.name.value.trim(),phone:el.phone.value.trim(),service:el.service.value,source:'Website – quick bar'};
+  const qb=quick.querySelector('button[type="submit"]'),qbt=qb.textContent;qb.disabled=true;qb.textContent='Sending…';
   try{
     const res=await sendLead(data);
+    if(res==='sent'){location.href='/thank-you/';return;}
     m.hidden=false;m.textContent='Thanks, '+data.name.split(' ')[0]+'! We’ll call '+data.phone+' shortly.'+(res==='preview'?' (Preview mode: not connected to an inbox yet.)':'');
     quick.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
-  }catch(err){m.hidden=false;m.textContent='We couldn’t send that. Please call (952) 395-3235.';}
+  }catch(err){qb.disabled=false;qb.textContent=qbt;m.hidden=false;m.textContent='We couldn’t send that. Please call (952) 395-3235.';}
 });
 
 // ---- Besty the chimney chatbot ----
