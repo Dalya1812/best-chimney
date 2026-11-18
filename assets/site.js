@@ -85,7 +85,7 @@ q.addEventListener('input',()=>{
 
   // price counts up when the offer comes into view
   const price=document.querySelector('.price b');
-  if(price&&'IntersectionObserver' in window){const end=179;let done=false;
+  if(price&&'IntersectionObserver' in window){const end=69;let done=false;
     const io=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;const t0=performance.now();
       const step=n=>{const k=Math.min(1,(n-t0)/1200),v=Math.round(end*(1-Math.pow(1-k,3)));price.textContent='$'+v;if(k<1)requestAnimationFrame(step);};
       price.textContent='$0';requestAnimationFrame(step);io.disconnect();}},{threshold:.6});
@@ -208,7 +208,7 @@ quick.addEventListener('submit',async e=>{
   // no auto-popup: the chat opens only when the visitor taps the icon
 
   const A={
-    price:"Our fall special is <b>$179 for a sweep + Level 1 inspection</b> (through Dec 31). Repairs are quoted <b>in writing</b> after we inspect, so you know the price before any work starts.",
+    price:"A chimney inspection is just <b>$69</b>. Repairs are quoted <b>in writing</b> after we inspect, so you know the price before any work starts.",
     services:"We do it all: sweeping & cleaning, inspections (Level 1–3, camera scans), masonry & tuckpointing, leak repair & waterproofing, crowns, caps & chase covers, rebuilds, liners, and gas fireplace service.",
     smell:"A campfire smell is usually creosote buildup, and creosote is flammable. A cleaning + inspection before your next fire is the safe move.",
     smoke:"Smoke coming into the room usually means a blocked flue, heavy creosote or a cap problem. Please don't use the fireplace until it's checked.",
