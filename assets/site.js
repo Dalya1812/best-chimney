@@ -205,7 +205,7 @@ quick.addEventListener('submit',async e=>{
   document.querySelectorAll('[data-open-chat]').forEach(b=>b.onclick=open);
   $('cb-tx').onclick=e=>{e.stopPropagation();teaser.hidden=true;ss.set('cb-seen','1');};
   teaser.onclick=open;
-  if(!ss.get('cb-seen'))setTimeout(()=>{if(panel.hidden)teaser.hidden=false;},7000);
+  // no auto-popup: the chat opens only when the visitor taps the icon
 
   const A={
     price:"Our fall special is <b>$179 for a sweep + Level 1 inspection</b> (through Dec 31). Repairs are quoted <b>in writing</b> after we inspect, so you know the price before any work starts.",
