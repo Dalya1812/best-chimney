@@ -128,12 +128,13 @@ q.addEventListener('input',()=>{
 // ---- Leads ----
 // To receive leads by email: create a free form at formspree.io (or web3forms.com),
 // then paste its endpoint here, e.g. "https://formspree.io/f/abcdwxyz".
-const LEAD_ENDPOINT = "";
+const LEAD_ENDPOINT = "https://formsubmit.co/ajax/service@bestchimneyservices.com";
 const digits=s=>(s||'').replace(/\D/g,'');
 async function sendLead(data){
   if(!LEAD_ENDPOINT) return 'preview';
-  const r=await fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(data)});
+  const r=await fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(Object.assign({_subject:'New website lead: '+(data.name||'')+' '+(data.phone||''),_template:'table',_captcha:'false'},data))});
   if(!r.ok) throw new Error('send failed');
+  const j=await r.json().catch(()=>({}));if(j.success===false||j.success==='false') throw new Error(j.message||'send failed');
   return 'sent';
 }
 function mark(el,bad){el.setAttribute('aria-invalid',bad?'true':'false');const e=el.parentElement.querySelector('.err');if(e)e.hidden=!bad;return bad;}
