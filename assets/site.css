@@ -841,3 +841,8 @@ nav.main a:hover{background:var(--brick)}
 /* chat mascot: keep still (no bob, puff, blink or hover tilt) */
 .cb-fab,.cb-puff,.cb-eye{animation:none!important}
 .cb-fab:hover{transform:none!important}
+
+/* new logo (image) */
+.logo .brand-img{display:block;height:56px;width:auto}
+@media (max-width:560px){.logo .brand-img{height:44px}}
+.brand-foot{display:block;height:84px;width:auto}
