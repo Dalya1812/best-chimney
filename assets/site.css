@@ -867,3 +867,6 @@ a.rv-pill svg{color:var(--steel)}
 .foot-social svg{width:22px;height:22px}
 .rv-pill-mark-fb{background:#1877F2;width:26px;padding:0}
 a.rv-pill .rv-pill-mark-fb svg{width:22px;height:22px;color:#fff}
+.foot-social a.ig:hover{background:#D6249F;border-color:#D6249F}
+.rv-pill-mark-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);width:26px;padding:0}
+a.rv-pill .rv-pill-mark-ig svg{width:16px;height:16px;color:#fff}
