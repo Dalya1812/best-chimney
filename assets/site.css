@@ -870,3 +870,17 @@ a.rv-pill .rv-pill-mark-fb svg{width:22px;height:22px;color:#fff}
 .foot-social a.ig:hover{background:#D6249F;border-color:#D6249F}
 .rv-pill-mark-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%);width:26px;padding:0}
 a.rv-pill .rv-pill-mark-ig svg{width:16px;height:16px;color:#fff}
+
+/* follow our work (Instagram / Facebook) */
+.follow{margin-top:clamp(28px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;background:#141414;color:#fff;border-radius:16px;padding:clamp(20px,3vw,28px) clamp(20px,3.5vw,36px);position:relative;overflow:hidden}
+.follow::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 200px at 0% 0%,rgba(147,0,0,.45),transparent 70%);pointer-events:none}
+.follow-txt{position:relative;display:grid;gap:4px}
+.follow-txt b{font-family:"Outfit",Arial,sans-serif;font-size:clamp(1.25rem,2.2vw,1.55rem);letter-spacing:-.01em}
+.follow-txt span{color:#C9C9C9;font-size:.98rem}
+.follow-btns{position:relative;display:flex;gap:12px;flex-wrap:wrap}
+.fbtn{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 22px 0 16px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700;font-size:1rem;transition:transform .2s,box-shadow .2s,filter .2s}
+.fbtn svg{width:22px;height:22px;flex:none}
+.fbtn-ig{background:linear-gradient(45deg,#F58529 0%,#DD2A7B 45%,#8134AF 75%,#515BD4 100%)}
+.fbtn-fb{background:#1877F2}
+.fbtn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.35);filter:brightness(1.06)}
+@media (max-width:560px){.follow-btns{width:100%}.fbtn{flex:1;justify-content:center}}
